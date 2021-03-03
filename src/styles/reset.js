@@ -8,11 +8,11 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: bilo, sans-serif;
-
-    
   }
 
   body {
     background: #F8F8F8;
+    overflow-x: hidden;
+    color: #06101A;
   }
 `

@@ -7,7 +7,6 @@ export const Image = styled(Img)`
 
 export const HeroWrapper = styled.div`
   position: relative;
-  margin: 0 -10vw;
 `
 export const Content = styled.div`
   position: absolute;

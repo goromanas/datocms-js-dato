@@ -3,7 +3,7 @@ export const useHero = () => {
   const hero = useStaticQuery(
     graphql`
       query heroQuery {
-        datoCmsHero {
+        hero: datoCmsHero {
           title
           subtitle
           heroImage {

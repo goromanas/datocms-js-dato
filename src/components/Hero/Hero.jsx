@@ -4,14 +4,14 @@ import Button from '../core/Button/Button'
 import { Image, HeroWrapper, Title, Subtitle, Content, CTA } from './Hero.style'
 
 const Hero = () => {
-  const { datoCmsHero } = useHero()
-  console.log(datoCmsHero)
+  const { hero } = useHero()
+
   return (
     <HeroWrapper>
-      <Image fluid={datoCmsHero.heroImage.fluid} />
+      <Image fluid={hero.heroImage.fluid} />
       <Content>
-        <Title>{datoCmsHero.title}</Title>
-        <Subtitle>{datoCmsHero.subtitle}</Subtitle>
+        <Title>{hero.title}</Title>
+        <Subtitle>{hero.subtitle}</Subtitle>
         <CTA>
           <Button title="Paslaugos" />
           <Button title="Susisiekit" type="outline" />

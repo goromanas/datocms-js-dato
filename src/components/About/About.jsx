@@ -3,12 +3,12 @@ import { useAbout } from '../../graphql/useAbout'
 import { AboutWrapper, Content, Title, Description } from './About.style'
 
 const About = () => {
-  const data = useAbout()
+  const { about } = useAbout()
   return (
     <AboutWrapper>
       <Content>
-        <Title>{data.datoCmsAbout.title}</Title>
-        <Description dangerouslySetInnerHTML={{ __html: data.datoCmsAbout.description }} />
+        <Title>{about.title}</Title>
+        <Description dangerouslySetInnerHTML={{ __html: about.description }} />
       </Content>
     </AboutWrapper>
   )

@@ -3,7 +3,7 @@ export const useAbout = () => {
   const about = useStaticQuery(
     graphql`
       query aboutQuery {
-        datoCmsAbout {
+        about: datoCmsAbout {
           title
           description
         }

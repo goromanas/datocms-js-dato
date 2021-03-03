@@ -4,7 +4,7 @@ import { colors } from '../../../styles/colors'
 export const ButtonWrapper = styled.div`
   /* padding: 0.5rem 1rem; */
   background-color: ${({ type }) => (type === 'outline' ? 'transparent' : colors.primary)};
-  color: ${({ type }) => (type === 'outline' ? '#fff' : colors.dark)};
+  color: ${({ type, color }) => (type === 'outline' || color ? '#fff' : colors.dark)};
   border: ${({ type }) => (type === 'outline' ? `solid 1px ${colors.primary}` : 'none')};
   width: 180px;
   height: 55px;

@@ -28,8 +28,11 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.div`
-  font-family: proxima-nova, sans-serif;
-  font-weight: 300;
-  letter-spacing: 0.45px;
-  line-height: 2rem;
+  p {
+    font-family: proxima-nova, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.45px;
+    line-height: 2rem;
+    padding: 1rem 0;
+  }
 `

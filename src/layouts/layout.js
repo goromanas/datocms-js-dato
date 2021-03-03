@@ -9,7 +9,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Header from '../components/Header/Header'
 import SEO from '../seo'
-import Container from './Container/Container'
 import Footer from '../components/Footer/Footer'
 
 // import Footer from '../components/Footer/Footer'
@@ -19,10 +18,10 @@ const Layout = ({ children, title }) => {
     <>
       <div id="page-top"></div>
       <Header />
-      <Container>
-        <main>{children}</main>
-        {/* <Footer scrollToTop={scrollToTop} /> */}
-      </Container>
+
+      <main>{children}</main>
+      {/* <Footer scrollToTop={scrollToTop} /> */}
+
       <Footer />
       <SEO title={title} />
     </>

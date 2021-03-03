@@ -1,0 +1,32 @@
+import styled from 'styled-components'
+import { default as BackgroundImageLib } from 'gatsby-background-image'
+
+export const CardWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+  top: -115px;
+`
+
+export const ServiceSection = styled.section`
+  margin-top: 6.25rem;
+`
+
+export const BackgroundImage = styled(BackgroundImageLib)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 471px;
+`
+
+export const Title = styled.h2`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2.5rem;
+  letter-spacing: 6px;
+  font-weight: 400;
+`
