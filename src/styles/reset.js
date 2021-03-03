@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
 @import url('https://use.typekit.net/tnz5lnx.css');
+
   * {
     box-sizing: border-box;
     margin: 0;

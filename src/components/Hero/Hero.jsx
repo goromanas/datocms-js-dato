@@ -1,14 +1,23 @@
 import React from 'react'
 import { useHero } from '../../graphql/useHero'
-import { Image } from './Hero.style'
+import Button from '../core/Button/Button'
+import { Image, HeroWrapper, Title, Subtitle, Content, CTA } from './Hero.style'
 
 const Hero = () => {
-  const data = useHero()
-  console.log(data)
+  const { datoCmsHero } = useHero()
+  console.log(datoCmsHero)
   return (
-    <div>
-      <Image fluid={data.datoCmsHero.heroImage.fluid} />
-    </div>
+    <HeroWrapper>
+      <Image fluid={datoCmsHero.heroImage.fluid} />
+      <Content>
+        <Title>{datoCmsHero.title}</Title>
+        <Subtitle>{datoCmsHero.subtitle}</Subtitle>
+        <CTA>
+          <Button title="Paslaugos" />
+          <Button title="Susisiekit" type="outline" />
+        </CTA>
+      </Content>
+    </HeroWrapper>
   )
 }
 

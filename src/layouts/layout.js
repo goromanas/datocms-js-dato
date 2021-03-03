@@ -6,11 +6,11 @@
  */
 
 import React from 'react'
-import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Header from '../components/Header/Header'
 import SEO from '../seo'
 import Container from './Container/Container'
+import Footer from '../components/Footer/Footer'
 
 // import Footer from '../components/Footer/Footer'
 
@@ -23,6 +23,7 @@ const Layout = ({ children, title }) => {
         <main>{children}</main>
         {/* <Footer scrollToTop={scrollToTop} /> */}
       </Container>
+      <Footer />
       <SEO title={title} />
     </>
   )

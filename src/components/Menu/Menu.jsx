@@ -4,7 +4,7 @@ import { MenuItem, MenuWrapper } from './Menu.style'
 
 const Menu = () => {
   const menuItems = useMenu()
-  console.log(menuItems)
+
   return (
     <MenuWrapper>
       {menuItems.menu.edges.map((item) => (
