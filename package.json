@@ -15,7 +15,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.4",
     "classnames": "^2.2.6",
     "dotenv": "^8.2.0",
@@ -25,11 +24,10 @@
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-source-datocms": "^2.5.12",
-    "postcss": "^8.2.6",
     "react": "^16.13.1",
     "react-datocms": "^1.5.3",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "tailwindcss": "^2.0.3"
+    "styled-components": "^5.2.1"
   }
 }
