@@ -5,6 +5,8 @@ import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
 import Services from '../components/Services/Services'
 import Testimonials from '../components/Testimonials/Testimonials'
+import Contact from '../components/Contact/Contact'
+import Separator from '../components/core/Separator/Separator'
 
 export default function Index() {
   return (
@@ -15,6 +17,8 @@ export default function Index() {
         <About />
         <Services />
         <Testimonials />
+        <Separator />
+        <Contact />
       </Layout>
     </>
   )
