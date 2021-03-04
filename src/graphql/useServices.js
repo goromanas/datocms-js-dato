@@ -17,6 +17,7 @@ export const useServices = () => {
           edges {
             node {
               title
+              tooltip
               background {
                 url
                 fluid(maxWidth: 1100) {

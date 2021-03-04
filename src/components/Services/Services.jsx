@@ -17,7 +17,7 @@ const Services = () => {
       <Container>
         <CardWrapper>
           {services.edges.map((service) => (
-            <ServiceCard key={service.node.id} service={service.node} />
+            <ServiceCard key={service.node.id} service={service.node} tooltip={page.node.tooltip} />
           ))}
         </CardWrapper>
       </Container>

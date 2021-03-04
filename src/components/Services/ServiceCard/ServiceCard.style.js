@@ -27,6 +27,9 @@ export const Price = styled.div`
   font-weight: 350;
   text-align: center;
 `
+export const PriceContainer = styled.div`
+  position: relative;
+`
 
 export const Description = styled.div`
   display: flex;
