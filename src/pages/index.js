@@ -7,6 +7,7 @@ import Services from '../components/Services/Services'
 import Testimonials from '../components/Testimonials/Testimonials'
 import Contact from '../components/Contact/Contact'
 import Separator from '../components/core/Separator/Separator'
+import 'antd/dist/antd.css'
 
 export default function Index() {
   return (

@@ -1,37 +1,76 @@
-import React from 'react'
-import { Slider, Wrapper, Title } from './Testimonials.style'
+import React, { useRef } from 'react'
+import {
+  Wrapper,
+  Title,
+  SliderContainer,
+  Slider,
+  Controls,
+  IconContainer,
+} from './Testimonials.style'
 import { useTestimonial } from '../../graphql/useTestimonial'
 import SingleTestimonial from './SingleTestimonial/SingleTestimonial'
-import Container from '../../layouts/Container/Container'
+import ArrowLeft from './Icons/ArrowLeft'
+import ArrowRight from './Icons/ArrowRight'
 
 const Testimonials = () => {
+  const carousel = useRef()
   const settings = {
     dots: false,
     infinite: true,
     fade: false,
-    slidesToShow: 1,
+    slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
     draggable: false,
     swipe: true,
     touchMove: true,
-    accessibility: true,
+    accessibility: false,
     arrows: false,
+    rows: 1,
+    speed: 1000,
   }
 
   const { testimonials } = useTestimonial()
 
+  function handleLeft() {
+    carousel.current.prev()
+  }
+
+  function handleRight() {
+    carousel.current.next()
+  }
+
+  const IconLeft = () => (
+    <IconContainer>
+      <ArrowLeft onClick={() => handleLeft()} />
+    </IconContainer>
+  )
+
+  const IconRight = () => (
+    <IconContainer>
+      <ArrowRight onClick={() => handleRight()} />
+    </IconContainer>
+  )
+
   return (
-    <Container>
+    <>
       <Title>Atsiliepimai</Title>
       <Wrapper>
-        {/* <Slider {...settings}> */}
-        {testimonials.edges.map((item) => (
-          <SingleTestimonial key={item.node.id} testimonial={item.node} />
-        ))}
-        {/* </Slider> */}
+        <SliderContainer>
+          <Slider {...settings} ref={carousel}>
+            {testimonials.edges.map((item) => (
+              <div>
+                <SingleTestimonial key={item.node.id} testimonial={item.node} />
+              </div>
+            ))}
+          </Slider>
+        </SliderContainer>
+        <Controls>
+          <IconLeft />
+          <IconRight />
+        </Controls>
       </Wrapper>
-    </Container>
+    </>
   )
 }
 export default Testimonials
