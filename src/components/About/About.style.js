@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
 
-export const AboutWrapper = styled.div`
+export const AboutWrapper = styled.section`
   background: #fff;
   max-width: 1000px;
   display: flex;

@@ -16,7 +16,6 @@ import Footer from '../components/Footer/Footer'
 const Layout = ({ children, title }) => {
   return (
     <>
-      <div id="page-top"></div>
       <Header />
 
       <main>{children}</main>

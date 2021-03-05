@@ -15,11 +15,11 @@ export default function Index() {
       <GlobalStyle />
       <Layout title="Pagrindinis">
         <Hero />
-        <About />
-        <Services />
-        <Testimonials />
+        <About id="apie-mane" />
+        <Services id="paslaugos" />
+        <Testimonials id="atsiliepimai" />
         <Separator />
-        <Contact />
+        <Contact id="kontaktai" />
       </Layout>
     </>
   )

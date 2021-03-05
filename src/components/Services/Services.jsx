@@ -4,12 +4,12 @@ import Container from '../../layouts/Container/Container'
 import ServiceCard from './ServiceCard/ServiceCard'
 import { CardWrapper, ServiceSection, BackgroundImage, Title } from './Services.style'
 
-const Services = () => {
+const Services = ({ id }) => {
   const { services, section } = useServices()
   const page = section.edges.filter((edge) => edge.node.title === 'Paslaugos')[0]
 
   return (
-    <ServiceSection>
+    <ServiceSection id={id}>
       <BackgroundImage fluid={page.node.background.fluid}>
         <Title>{page.node.title}</Title>
       </BackgroundImage>

@@ -12,7 +12,7 @@ import SingleTestimonial from './SingleTestimonial/SingleTestimonial'
 import ArrowLeft from './Icons/ArrowLeft'
 import ArrowRight from './Icons/ArrowRight'
 
-const Testimonials = () => {
+const Testimonials = ({ id }) => {
   const carousel = useRef()
   const settings = {
     dots: false,
@@ -41,27 +41,25 @@ const Testimonials = () => {
   }
 
   const IconLeft = () => (
-    <IconContainer>
-      <ArrowLeft onClick={() => handleLeft()} />
+    <IconContainer onClick={() => handleLeft()}>
+      <ArrowLeft />
     </IconContainer>
   )
 
   const IconRight = () => (
-    <IconContainer>
-      <ArrowRight onClick={() => handleRight()} />
+    <IconContainer onClick={() => handleRight()}>
+      <ArrowRight />
     </IconContainer>
   )
 
   return (
-    <>
+    <section id={id}>
       <Title>Atsiliepimai</Title>
       <Wrapper>
         <SliderContainer>
           <Slider {...settings} ref={carousel}>
             {testimonials.edges.map((item) => (
-              <div>
-                <SingleTestimonial key={item.node.id} testimonial={item.node} />
-              </div>
+              <SingleTestimonial key={item.node.id} testimonial={item.node} />
             ))}
           </Slider>
         </SliderContainer>
@@ -70,7 +68,7 @@ const Testimonials = () => {
           <IconRight />
         </Controls>
       </Wrapper>
-    </>
+    </section>
   )
 }
 export default Testimonials

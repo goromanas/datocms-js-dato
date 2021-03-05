@@ -5,7 +5,6 @@ module.exports = {
     title: 'Gatsby Blog Demo',
   },
   plugins: [
-    'gatsby-plugin-postcss',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-antd',
     {
@@ -17,5 +16,8 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+    },
   ],
 }

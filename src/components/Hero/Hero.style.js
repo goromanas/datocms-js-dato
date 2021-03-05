@@ -5,7 +5,7 @@ export const Image = styled(Img)`
   max-height: 80vh;
 `
 
-export const HeroWrapper = styled.div`
+export const HeroWrapper = styled.section`
   position: relative;
 `
 export const Content = styled.div`

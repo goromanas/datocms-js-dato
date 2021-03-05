@@ -6,12 +6,14 @@ import Container from '../../layouts/Container/Container'
 
 const Header = () => {
   return (
-    <Container>
-      <Wrapper>
-        <Logo />
-        <Menu />
-      </Wrapper>
-    </Container>
+    <header id="header">
+      <Container>
+        <Wrapper>
+          <Logo />
+          <Menu />
+        </Wrapper>
+      </Container>
+    </header>
   )
 }
 
