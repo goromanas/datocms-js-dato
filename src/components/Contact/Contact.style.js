@@ -63,6 +63,15 @@ export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:first-child {
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    border: 1px solid ${colors.primary};
+    background-color: ${colors.primary};
+  }
 `
 
 export const Row = styled.div`

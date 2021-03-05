@@ -1,5 +1,7 @@
 import React, { useRef } from 'react'
 import {
+  ArrowLeft,
+  ArrowRight,
   Wrapper,
   Title,
   SliderContainer,
@@ -9,8 +11,6 @@ import {
 } from './Testimonials.style'
 import { useTestimonial } from '../../graphql/useTestimonial'
 import SingleTestimonial from './SingleTestimonial/SingleTestimonial'
-import ArrowLeft from './Icons/ArrowLeft'
-import ArrowRight from './Icons/ArrowRight'
 
 const Testimonials = ({ id }) => {
   const carousel = useRef()

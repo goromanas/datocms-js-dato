@@ -1,7 +1,6 @@
 import React from 'react'
 import { useHero } from '../../graphql/useHero'
-import Button from '../core/Button/Button'
-import { Image, HeroWrapper, Title, Subtitle, Content, CTA } from './Hero.style'
+import { Image, HeroWrapper, Title, Subtitle, Content, CTA, Button } from './Hero.style'
 
 const Hero = () => {
   const { hero } = useHero()
@@ -14,7 +13,7 @@ const Hero = () => {
         <Subtitle>{hero.subtitle}</Subtitle>
         <CTA>
           <Button title="Paslaugos" />
-          <Button title="Susisiekit" type="outline" />
+          <Button title="Susisiekite" type="outline" />
         </CTA>
       </Content>
     </HeroWrapper>

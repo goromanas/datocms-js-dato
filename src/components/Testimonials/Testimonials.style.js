@@ -1,6 +1,8 @@
 import { Carousel as SliderLib } from 'antd'
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
+import { default as ArrowLeftLib } from './Icons/ArrowLeft'
+import { default as ArrowRightLib } from './Icons/ArrowRight'
 
 export const Slider = styled(SliderLib)`
   overflow-y: hidden;
@@ -38,8 +40,17 @@ export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.1s ease-out border background-color;
 
   &:first-child {
     margin-right: 1rem;
   }
+
+  &:hover {
+    border: 1px solid ${colors.primary};
+    background-color: ${colors.primary};
+  }
 `
+
+export const ArrowLeft = styled(ArrowLeftLib)``
+export const ArrowRight = styled(ArrowRightLib)``

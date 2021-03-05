@@ -36,5 +36,9 @@
     "react-helmet": "^6.1.0",
     "styled-components": "^5.2.1",
     "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1"
   }
 }

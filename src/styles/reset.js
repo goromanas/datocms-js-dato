@@ -21,7 +21,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${colors.dark};
 
     &:hover {
-      color: ${colors.primary}
+      color: ${colors.primary};
+      cursor: pointer;
     }
   }
 `
