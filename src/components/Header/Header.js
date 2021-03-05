@@ -4,13 +4,13 @@ import Menu from '../Menu/Menu'
 import { Wrapper } from './Header.style'
 import Container from '../../layouts/Container/Container'
 
-const Header = () => {
+const Header = ({ hideMenu = false }) => {
   return (
     <header id="header">
       <Container>
         <Wrapper>
           <Logo />
-          <Menu />
+          {!hideMenu && <Menu />}
         </Wrapper>
       </Container>
     </header>

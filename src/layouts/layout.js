@@ -10,13 +10,15 @@ import PropTypes from 'prop-types'
 import Header from '../components/Header/Header'
 import SEO from '../seo'
 import Footer from '../components/Footer/Footer'
+import { GlobalStyle } from '../styles/reset'
 
 // import Footer from '../components/Footer/Footer'
 
-const Layout = ({ children, title }) => {
+const Layout = ({ children, title, hideMenu }) => {
   return (
     <>
-      <Header />
+      <GlobalStyle />
+      <Header hideMenu={hideMenu} />
 
       <main>{children}</main>
       {/* <Footer scrollToTop={scrollToTop} /> */}

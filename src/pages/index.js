@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Layout from '../layouts/layout'
-import { GlobalStyle } from '../styles/reset'
 import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
 import Services from '../components/Services/Services'
@@ -16,16 +15,13 @@ export default function Index() {
   const { hideTestimonials } = itemsToHide
 
   return (
-    <>
-      <GlobalStyle />
-      <Layout title="Pagrindinis">
-        <Hero />
-        <About id="apie-mane" />
-        <Services id="paslaugos" setTopic={setTopic} />
-        {!hideTestimonials && <Testimonials id="atsiliepimai" />}
-        <Separator />
-        <Contact id="kontaktai" topic={topic} setTopic={setTopic} />
-      </Layout>
-    </>
+    <Layout title="Pagrindinis">
+      <Hero />
+      <About id="apie-mane" />
+      <Services id="paslaugos" setTopic={setTopic} />
+      {!hideTestimonials && <Testimonials id="atsiliepimai" />}
+      <Separator />
+      <Contact id="kontaktai" topic={topic} setTopic={setTopic} />
+    </Layout>
   )
 }
