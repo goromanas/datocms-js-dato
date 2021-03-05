@@ -3,11 +3,10 @@ import { usePosts } from '../../graphql/usePosts'
 
 const Posts = () => {
   const { posts } = usePosts()
-  console.log(posts)
   return (
     <div>
       {posts.edges.map((post) => (
-        <div>{post.node.title}</div>
+        <div key={post.slug}>{post.node.title}</div>
       ))}
     </div>
   )
