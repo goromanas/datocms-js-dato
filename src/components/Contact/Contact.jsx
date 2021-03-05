@@ -19,7 +19,7 @@ import EnvelopeIcon from './Icons/EnvelopeIcon'
 import LinkedinIcon from './Icons/LinkedinIcon'
 import PhoneIcon from './Icons/PhoneIcon'
 
-const Contact = ({ id }) => {
+const Contact = ({ id, topic, setTopic }) => {
   const { contact } = useContact()
   const { services } = useServices()
 
@@ -56,7 +56,7 @@ const Contact = ({ id }) => {
                 <div>{contact.linkedin}</div>
               </ContactItem>
             </SocialWrapper>
-            <Form services={services.edges} contact={contact} />
+            <Form services={services.edges} contact={contact} topic={topic} setTopic={setTopic} />
           </ContactFormWrapper>
         </Wrapper>
         <BackToTop />

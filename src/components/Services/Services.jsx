@@ -4,7 +4,7 @@ import Container from '../../layouts/Container/Container'
 import ServiceCard from './ServiceCard/ServiceCard'
 import { CardWrapper, ServiceSection, BackgroundImage, Title } from './Services.style'
 
-const Services = ({ id }) => {
+const Services = ({ id, setTopic }) => {
   const { services, section } = useServices()
   const page = section.edges.filter((edge) => edge.node.title === 'Paslaugos')[0]
 
@@ -17,7 +17,12 @@ const Services = ({ id }) => {
       <Container>
         <CardWrapper>
           {services.edges.map((service) => (
-            <ServiceCard key={service.node.id} service={service.node} tooltip={page.node.tooltip} />
+            <ServiceCard
+              key={service.node.id}
+              service={service.node}
+              tooltip={page.node.tooltip}
+              setTopic={setTopic}
+            />
           ))}
         </CardWrapper>
       </Container>

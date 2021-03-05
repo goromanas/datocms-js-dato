@@ -7,7 +7,7 @@ import Button from '../../core/Button/Button'
 
 const { Option } = Select
 
-const Form = ({ className, services, contact }) => {
+const Form = ({ className, services, contact, topic, setTopic }) => {
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -110,11 +110,10 @@ const Form = ({ className, services, contact }) => {
             help={formik.errors.phone}
           >
             {/* <label htmlFor="phone">Telefono numeris</label> */}
-            <StyledInput
+            <Input
               placeholder="Telefono Nr."
               allowClear
               maxLength="10"
-              addonBefore="+370"
               required
               id="phone"
               name="phone"
@@ -128,7 +127,12 @@ const Form = ({ className, services, contact }) => {
         <Col span={12}>
           <AntForm.Item>
             {/* <label htmlFor="city">Dominanti paslauga</label> */}
-            <Select placeholder="Dominanti paslauga" className="custom-select">
+            <Select
+              placeholder="Dominanti paslauga"
+              className="custom-select"
+              value={topic || null}
+              onSelect={(e) => setTopic(e)}
+            >
               {services.map((service) => (
                 <Option value={service.node.title} key={service.node.id}>
                   {service.node.title}

@@ -15,6 +15,7 @@ export const ButtonWrapper = styled.div`
 export const Input = styled(InputLib)`
   padding: 0.8rem;
   border: 1px solid #06101a;
+  min-width: 220px;
 `
 export const StyledInput = styled(InputLib)`
   border: 1px solid #06101a;
@@ -23,18 +24,21 @@ export const StyledInput = styled(InputLib)`
   .ant-input-affix-wrapper {
     padding: 0.8rem;
   }
+
+  .ant-input-affix-wrapper.ant-input-affix-wrapper {
+    border: none;
+  }
 `
 
 export const Select = styled(SelectLib)`
   &.custom-select {
     border: 1px solid #06101a;
     min-width: 220px;
-    width: 250px;
+    height: 48px;
   }
 
-  .ant-select-selector {
-    height: 50px;
-    padding: 0.8rem;
+  .ant-select-selector.ant-select-selector {
+    height: 46px;
     display: flex;
     justify-content: center;
     align-items: center;

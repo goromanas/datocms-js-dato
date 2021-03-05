@@ -3,8 +3,9 @@ import { Card, Title, Price, Description, CTA, PriceContainer } from './ServiceC
 import { addCurrency } from '../../../libs'
 import Button from '../../core/Button/Button'
 import QuestionMark from './QuestionMark'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
-const ServiceCard = ({ service, tooltip }) => {
+const ServiceCard = ({ service, tooltip, setTopic }) => {
   return (
     <Card>
       <Title>{service.title}</Title>
@@ -14,7 +15,9 @@ const ServiceCard = ({ service, tooltip }) => {
       </PriceContainer>
       <Description dangerouslySetInnerHTML={{ __html: service.description }} />
       <CTA>
-        <Button title="Užsisakyti" color="white" />
+        <AnchorLink to="/#kontaktai" stripHash>
+          <Button title="Užsisakyti" color="white" onClick={() => setTopic(service.title)} />
+        </AnchorLink>
       </CTA>
     </Card>
   )
