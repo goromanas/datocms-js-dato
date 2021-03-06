@@ -6,7 +6,7 @@ import Posts from '../components/Posts/Posts'
 export default function Articles() {
   return (
     <>
-      <Layout title="Straipsniai" hideMenu>
+      <Layout title="Straipsniai" displayArticlesMenu>
         <Container>
           <Posts />
         </Container>

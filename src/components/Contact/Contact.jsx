@@ -1,9 +1,7 @@
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React from 'react'
 import { useContact } from '../../graphql/useContact'
 import { useServices } from '../../graphql/useServices'
 import Container from '../../layouts/Container/Container'
-import ArrowTop from './Icons/ArrowTop'
 import {
   ContactFormWrapper,
   Image,
@@ -11,29 +9,16 @@ import {
   Title,
   SocialWrapper,
   ContactItem,
-  IconContainer,
-  Row,
 } from './Contact.style'
 import Form from './Form/Form'
 import EnvelopeIcon from './Icons/EnvelopeIcon'
 import LinkedinIcon from './Icons/LinkedinIcon'
 import PhoneIcon from './Icons/PhoneIcon'
+import BackToTop from '../core/BackToTop/BackToTop'
 
-const Contact = ({ id, topic, setTopic }) => {
+const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
   const { contact } = useContact()
   const { services } = useServices()
-
-  const BackToTop = () => {
-    return (
-      <Row>
-        <AnchorLink to="/#header">
-          <IconContainer>
-            <ArrowTop />
-          </IconContainer>
-        </AnchorLink>
-      </Row>
-    )
-  }
 
   return (
     <section id={id}>
@@ -59,7 +44,7 @@ const Contact = ({ id, topic, setTopic }) => {
             <Form services={services.edges} contact={contact} topic={topic} setTopic={setTopic} />
           </ContactFormWrapper>
         </Wrapper>
-        <BackToTop />
+        {!hideBackToTop && <BackToTop />}
       </Container>
     </section>
   )

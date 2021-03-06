@@ -14,15 +14,12 @@ import { GlobalStyle } from '../styles/reset'
 
 // import Footer from '../components/Footer/Footer'
 
-const Layout = ({ children, title, hideMenu }) => {
+const Layout = ({ children, title, hideMenu, displayArticlesMenu }) => {
   return (
     <>
       <GlobalStyle />
-      <Header hideMenu={hideMenu} />
-
+      <Header hideMenu={hideMenu} displayArticlesMenu={displayArticlesMenu} />
       <main>{children}</main>
-      {/* <Footer scrollToTop={scrollToTop} /> */}
-
       <Footer />
       <SEO title={title} />
     </>

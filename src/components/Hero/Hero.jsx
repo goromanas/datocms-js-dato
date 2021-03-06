@@ -1,3 +1,4 @@
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React from 'react'
 import { useHero } from '../../graphql/useHero'
 import { Image, HeroWrapper, Title, Subtitle, Content, CTA, Button } from './Hero.style'
@@ -12,8 +13,12 @@ const Hero = () => {
         <Title>{hero.title}</Title>
         <Subtitle>{hero.subtitle}</Subtitle>
         <CTA>
-          <Button title="Paslaugos" />
-          <Button title="Susisiekite" type="outline" />
+          <AnchorLink to="/#paslaugos" stripHash>
+            <Button title="Paslaugos" />
+          </AnchorLink>
+          <AnchorLink to="/#kontaktai" stripHash>
+            <Button title="Susisiekite" type="outline" />
+          </AnchorLink>
         </CTA>
       </Content>
     </HeroWrapper>

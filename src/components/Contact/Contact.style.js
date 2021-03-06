@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { colors } from '../../styles/colors'
 
 export const Image = styled(Img)`
   width: 60%;
@@ -52,31 +51,4 @@ export const ContactItem = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-`
-
-export const IconContainer = styled.div`
-  margin-bottom: 3rem;
-  width: 55px;
-  height: 55px;
-  border: 1px solid ${colors.dark};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:first-child {
-    margin-right: 1rem;
-  }
-
-  &:hover {
-    border: 1px solid ${colors.primary};
-    background-color: ${colors.primary};
-  }
-`
-
-export const Row = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `
