@@ -21,7 +21,7 @@ const Testimonials = ({ id }) => {
     fade: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     draggable: true,
     swipe: true,
     touchMove: true,
@@ -30,6 +30,7 @@ const Testimonials = ({ id }) => {
     rows: 1,
     speed: 1000,
     swipeToSlide: true,
+    centerMode: true,
   }
 
   const { testimonials } = useTestimonial()
