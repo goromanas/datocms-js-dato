@@ -21,15 +21,15 @@ const Testimonials = ({ id }) => {
     fade: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: false,
-    draggable: false,
+    autoplay: true,
+    draggable: true,
     swipe: true,
     touchMove: true,
     accessibility: false,
     arrows: false,
     rows: 1,
     speed: 1000,
-    centerMode: true,
+    swipeToSlide: true,
   }
 
   const { testimonials } = useTestimonial()
