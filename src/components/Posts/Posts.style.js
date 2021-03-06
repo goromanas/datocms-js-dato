@@ -5,3 +5,7 @@ export const PostsWrapper = styled.div`
   grid-template-columns: 50% 50%;
 `
 export const Title = styled.h1``
+
+export const PostsContainer = styled.section`
+  margin-top: 8rem;
+`

@@ -10,7 +10,7 @@ export const AboutWrapper = styled.section`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  top: -50px;
+  top: 50px;
 `
 
 export const Content = styled.div`

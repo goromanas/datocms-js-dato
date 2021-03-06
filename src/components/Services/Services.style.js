@@ -10,7 +10,7 @@ export const CardWrapper = styled.div`
 `
 
 export const ServiceSection = styled.section`
-  margin-top: 6.25rem;
+  margin-top: 14.25rem;
 `
 
 export const BackgroundImage = styled(BackgroundImageLib)`
