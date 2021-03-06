@@ -21,7 +21,7 @@ const Testimonials = ({ id }) => {
     fade: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     draggable: true,
     swipe: true,
     touchMove: true,
