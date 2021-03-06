@@ -10,6 +10,10 @@ import { getCurrentPath } from '../../../libs'
 import Contact from '../../Contact/Contact'
 
 const SinglePost = ({ content, title, coverImage, date }) => {
+  let currentPath
+  if (typeof window !== 'undefined') {
+    currentPath = getCurrentPath()
+  }
   const [topic, setTopic] = useState('')
   return (
     <Layout displayArticlesMenu>
@@ -36,7 +40,7 @@ const SinglePost = ({ content, title, coverImage, date }) => {
         </Container>
       </Wrapper>
       <Contact hideBackToTop setTopic={setTopic} topic={topic} />
-      <BackToTop element={`${getCurrentPath()}#header`} />
+      <BackToTop element={`${currentPath}#header`} />
     </Layout>
   )
 }

@@ -19,8 +19,10 @@ export const getCurrentPage = () => {
 }
 
 export const checkWhichPage = (page) => {
-  const path = getCurrentPage()
-  if (path === page) return true
+  if (typeof window !== 'undefined') {
+    const path = getCurrentPage()
+    if (path === page) return true
+  }
   return false
 }
 
