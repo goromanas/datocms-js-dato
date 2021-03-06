@@ -7,5 +7,5 @@ export const PostsWrapper = styled.div`
 export const Title = styled.h1``
 
 export const PostsContainer = styled.section`
-  margin-top: 8rem;
+  margin-top: 3rem;
 `

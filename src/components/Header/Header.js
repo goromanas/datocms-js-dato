@@ -4,7 +4,7 @@ import Menu from '../Menu/Menu'
 import { Wrapper, HeaderContainer } from './Header.style'
 import Container from '../../layouts/Container/Container'
 
-const Header = ({ hideMenu = false, displayArticlesMenu }) => {
+const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader }) => {
   const [scrolled, setScrolled] = useState(false)
   const handleScroll = () => {
     const offset = window.scrollY
@@ -18,8 +18,12 @@ const Header = ({ hideMenu = false, displayArticlesMenu }) => {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
   })
-
-  const headerHeight = scrolled ? '40px' : '120px'
+  let headerHeight
+  if (slimHeader) {
+    headerHeight = '40px'
+  } else {
+    headerHeight = scrolled ? '40px' : '120px'
+  }
 
   return (
     <HeaderContainer id="header" height={headerHeight}>

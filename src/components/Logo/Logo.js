@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { PageTitle } from './Logo.style'
 
 const Logo = () => {
   return (
     <Link to="/">
-      <div>Logo</div>
+      <PageTitle>JS</PageTitle>
     </Link>
   )
 }

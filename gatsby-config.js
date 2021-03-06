@@ -18,6 +18,9 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -40,
+      },
     },
   ],
 }

@@ -28,9 +28,9 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.h2`
   color: ${colors.primary};
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 100;
-  font-family: 'proxima-nova', sans-serif;
+  font-family: 'proxima-nova-light', sans-serif;
 `
 
 export const CTA = styled.div`

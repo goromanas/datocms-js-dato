@@ -7,5 +7,5 @@ export const PostBody = styled.div`
 `
 
 export const Wrapper = styled.article`
-  margin-bottom: 7rem;
+  margin: 3rem 0 7rem;
 `

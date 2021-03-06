@@ -16,12 +16,16 @@ import TopElement from './Container/TopElement'
 
 // import Footer from '../components/Footer/Footer'
 
-const Layout = ({ children, title, hideMenu, displayArticlesMenu }) => {
+const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader }) => {
   return (
     <ParallaxProvider>
       <GlobalStyle />
       <TopElement id="page-top" />
-      <Header hideMenu={hideMenu} displayArticlesMenu={displayArticlesMenu} />
+      <Header
+        hideMenu={hideMenu}
+        displayArticlesMenu={displayArticlesMenu}
+        slimHeader={slimHeader}
+      />
       <main>{children}</main>
       <Footer />
       <SEO title={title} />

@@ -16,7 +16,7 @@ const SinglePost = ({ content, title, coverImage, date }) => {
   }
   const [topic, setTopic] = useState('')
   return (
-    <Layout displayArticlesMenu>
+    <Layout displayArticlesMenu slimHeader>
       <Wrapper>
         <Container>
           <PostTitle title={title} coverImage={coverImage} date={date} />
