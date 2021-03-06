@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-blog-demo",
+  "name": "js-couching",
   "version": "1.0.0",
   "private": true,
-  "description": "Gatsby Blog Demo",
-  "author": "Stefano Verna",
+  "description": "JS personal website",
+  "author": "RG",
   "keywords": [
     "gatsby"
   ],

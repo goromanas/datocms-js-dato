@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Blog Demo',
+    title: 'JS Couching',
   },
   plugins: [
     'gatsby-plugin-styled-components',

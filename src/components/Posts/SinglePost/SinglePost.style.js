@@ -6,4 +6,6 @@ export const PostBody = styled.div`
   font-size: 1.2rem;
 `
 
-export const Wrapper = styled.article``
+export const Wrapper = styled.article`
+  margin-bottom: 7rem;
+`

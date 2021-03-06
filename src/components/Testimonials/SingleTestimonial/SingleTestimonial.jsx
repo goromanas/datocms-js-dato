@@ -2,9 +2,9 @@ import React from 'react'
 import QuoteIcon from './QuoteIcon'
 import { Wrapper, Content, Author } from './SingleTestimonial.style'
 
-function SingleTestimonial({ testimonial }) {
+function SingleTestimonial({ testimonial, active }) {
   return (
-    <Wrapper>
+    <Wrapper active={active}>
       <QuoteIcon />
       <Content>{testimonial.content}</Content>
       <Author>{testimonial.author}</Author>

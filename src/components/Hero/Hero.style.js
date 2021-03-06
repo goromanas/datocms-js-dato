@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { default as ButtonLib } from '../core/Button/Button'
+import { colors } from '../../styles/colors'
 
 export const Image = styled(Img)`
   max-height: 80vh;
@@ -20,13 +21,14 @@ export const Title = styled.h1`
   color: #fff;
   font-weight: 400;
   text-transform: uppercase;
+  letter-spacing: 6px;
   font-size: 2.5rem;
 `
 
 export const Subtitle = styled.h2`
-  color: #fff;
+  color: ${colors.primary};
   font-size: 2rem;
-  font-weight: 300;
+  font-family: 'bilo-extralight';
 `
 
 export const CTA = styled.div`

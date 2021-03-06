@@ -9,7 +9,7 @@ export const Slider = styled(SliderLib)`
 `
 
 export const SliderContainer = styled.div`
-  height: 400px;
+  /* height: 400px; */
   width: 100vw;
   overflow-y: hidden;
 `

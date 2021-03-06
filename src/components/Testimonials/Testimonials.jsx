@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,6 +13,7 @@ import { useTestimonial } from '../../graphql/useTestimonial'
 import SingleTestimonial from './SingleTestimonial/SingleTestimonial'
 
 const Testimonials = ({ id }) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
   const carousel = useRef()
   const settings = {
     dots: false,
@@ -20,7 +21,7 @@ const Testimonials = ({ id }) => {
     fade: false,
     slidesToShow: 5,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     draggable: false,
     swipe: true,
     touchMove: true,
@@ -28,6 +29,7 @@ const Testimonials = ({ id }) => {
     arrows: false,
     rows: 1,
     speed: 1000,
+    centerMode: true,
   }
 
   const { testimonials } = useTestimonial()
@@ -57,9 +59,13 @@ const Testimonials = ({ id }) => {
       <Title>Atsiliepimai</Title>
       <Wrapper>
         <SliderContainer>
-          <Slider {...settings} ref={carousel}>
-            {testimonials.edges.map((item) => (
-              <SingleTestimonial key={item.node.id} testimonial={item.node} />
+          <Slider {...settings} ref={carousel} beforeChange={(prev, next) => setCurrentSlide(next)}>
+            {testimonials.edges.map((item, index) => (
+              <SingleTestimonial
+                key={item.node.id}
+                testimonial={item.node}
+                active={currentSlide === index}
+              />
             ))}
           </Slider>
         </SliderContainer>
