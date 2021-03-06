@@ -3,7 +3,7 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { Row, IconContainer } from './BackToTop.style'
 import ArrowTop from './Icons/ArrowTop'
 
-const BackToTop = ({ element = '/#header' }) => {
+const BackToTop = ({ element = '/#page-top' }) => {
   return (
     <Row>
       <AnchorLink to={element} stripHash>

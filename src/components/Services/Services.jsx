@@ -1,4 +1,5 @@
 import React from 'react'
+import { Parallax } from 'react-scroll-parallax'
 import { useServices } from '../../graphql/useServices'
 import Container from '../../layouts/Container/Container'
 import ServiceCard from './ServiceCard/ServiceCard'
@@ -10,9 +11,11 @@ const Services = ({ id, setTopic }) => {
 
   return (
     <ServiceSection id={id}>
-      <BackgroundImage fluid={page.node.background.fluid}>
-        <Title>{page.node.title}</Title>
-      </BackgroundImage>
+      <Parallax className="custom-class" y={[-20, 20]}>
+        <BackgroundImage fluid={page.node.background.fluid}>
+          <Title>{page.node.title}</Title>
+        </BackgroundImage>
+      </Parallax>
 
       <Container>
         <CardWrapper>

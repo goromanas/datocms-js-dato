@@ -18,9 +18,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #F8F8F8;
+    background: ${colors.background};
     overflow-x: hidden;
-    color: #06101A;
+    color: ${colors.dark};
   }
 
   a {

@@ -9,6 +9,7 @@ export const Image = styled(Img)`
 
 export const HeroWrapper = styled.section`
   position: relative;
+  top: 8rem;
 `
 export const Content = styled.div`
   position: absolute;

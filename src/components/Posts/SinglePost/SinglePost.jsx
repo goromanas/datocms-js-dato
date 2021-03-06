@@ -40,7 +40,7 @@ const SinglePost = ({ content, title, coverImage, date }) => {
         </Container>
       </Wrapper>
       <Contact hideBackToTop setTopic={setTopic} topic={topic} />
-      <BackToTop element={`${currentPath}#header`} />
+      <BackToTop element={`${currentPath}#page-top`} />
     </Layout>
   )
 }

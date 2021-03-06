@@ -15,6 +15,7 @@ import EnvelopeIcon from './Icons/EnvelopeIcon'
 import LinkedinIcon from './Icons/LinkedinIcon'
 import PhoneIcon from './Icons/PhoneIcon'
 import BackToTop from '../core/BackToTop/BackToTop'
+import { Parallax } from 'react-scroll-parallax'
 
 const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
   const { contact } = useContact()
@@ -24,7 +25,9 @@ const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
     <section id={id}>
       <Container>
         <Wrapper>
-          <Image fluid={contact.image.fluid} />
+          <Parallax className="custom-class" y={[-20, 20]}>
+            <Image fluid={contact.image.fluid} />
+          </Parallax>
           <ContactFormWrapper>
             <Title>{contact.title}</Title>
             <SocialWrapper>

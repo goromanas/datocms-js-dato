@@ -11,18 +11,21 @@ import Header from '../components/Header/Header'
 import SEO from '../seo'
 import Footer from '../components/Footer/Footer'
 import { GlobalStyle } from '../styles/reset'
+import { ParallaxProvider } from 'react-scroll-parallax'
+import TopElement from './Container/TopElement'
 
 // import Footer from '../components/Footer/Footer'
 
 const Layout = ({ children, title, hideMenu, displayArticlesMenu }) => {
   return (
-    <>
+    <ParallaxProvider>
       <GlobalStyle />
+      <TopElement id="page-top" />
       <Header hideMenu={hideMenu} displayArticlesMenu={displayArticlesMenu} />
       <main>{children}</main>
       <Footer />
       <SEO title={title} />
-    </>
+    </ParallaxProvider>
   )
 }
 

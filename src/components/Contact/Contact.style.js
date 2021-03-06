@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Img from 'gatsby-image'
 
 export const Image = styled(Img)`
-  width: 60%;
+  width: 850px;
   max-height: 650px;
 `
 export const Wrapper = styled.div`
