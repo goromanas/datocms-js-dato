@@ -8,6 +8,7 @@ import { CardWrapper, ServiceSection, BackgroundImage, Title } from './Services.
 const Services = ({ id, setTopic }) => {
   const { services, section } = useServices()
   const page = section.edges.filter((edge) => edge.node.title === 'Paslaugos')[0]
+  const pageServices = services.edges.filter((service) => service.node.title !== 'Kita')
 
   return (
     <ServiceSection id={id}>
@@ -19,12 +20,13 @@ const Services = ({ id, setTopic }) => {
 
       <Container>
         <CardWrapper>
-          {services.edges.map((service) => (
+          {pageServices.map((service) => (
             <ServiceCard
               key={service.node.id}
               service={service.node}
               tooltip={page.node.tooltip}
               setTopic={setTopic}
+              additionalInfo={service.node.additionalInfo}
             />
           ))}
         </CardWrapper>

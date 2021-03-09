@@ -5,7 +5,7 @@ export const Card = styled.div`
   width: 350px;
   height: 570px;
   box-shadow: 0px 6px 18px #0000001a;
-  padding: 3.75rem 3.125rem;
+  padding: 2.75rem 3.125rem;
   background: #fff;
   display: grid;
   grid-template-rows: 25% 15% 50% 10%;
@@ -31,17 +31,29 @@ export const PriceContainer = styled.div`
   position: relative;
 `
 
-export const Description = styled.div`
+export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
+`
+export const Description = styled.div`
   ul {
     list-style-type: none;
   }
 
   li {
-    padding: 1rem 0;
+    padding: 0.5rem 0;
+  }
+
+  center {
+    margin-bottom: 1rem;
+  }
+
+  img {
+    width: 35px;
+    height: auto;
   }
 `
 
@@ -49,4 +61,8 @@ export const CTA = styled.div`
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+`
+
+export const AdditionalInfo = styled.div`
+  color: ${colors.gray};
 `

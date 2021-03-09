@@ -9,7 +9,7 @@ const Hero = () => {
 
   return (
     <HeroWrapper>
-      <Parallax className="custom-class" y={[-30, 30]}>
+      <Parallax className="custom-class" y={[-40, 30]}>
         <Image fluid={hero.heroImage.fluid} />
       </Parallax>
       <Content>

@@ -55,6 +55,9 @@ function SEO({ description, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          charset: 'UTF-8',
+        },
       ].concat(meta)}
     ></Helmet>
   )

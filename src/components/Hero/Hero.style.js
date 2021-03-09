@@ -4,12 +4,12 @@ import { default as ButtonLib } from '../core/Button/Button'
 import { colors } from '../../styles/colors'
 
 export const Image = styled(Img)`
-  max-height: 80vh;
+  margin: 0 2rem;
 `
 
 export const HeroWrapper = styled.section`
   position: relative;
-  top: 8rem;
+  top: 35px;
 `
 export const Content = styled.div`
   position: absolute;
@@ -40,6 +40,7 @@ export const CTA = styled.div`
 
 export const Button = styled(ButtonLib)`
   box-shadow: 0px 6px 18px #0000001a;
+  letter-spacing: 2.7px;
 
   &:first-child {
     margin-right: 1rem;

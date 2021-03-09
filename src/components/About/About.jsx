@@ -1,15 +1,36 @@
 import React from 'react'
 import { useAbout } from '../../graphql/useAbout'
-import { AboutWrapper, Content, Title, Description } from './About.style'
+import {
+  AboutWrapper,
+  Title,
+  Description,
+  Image,
+  ContentWrapper,
+  Content,
+  TitleWrapper,
+  Container,
+} from './About.style'
 
 const About = ({ id }) => {
   const { about } = useAbout()
   return (
     <AboutWrapper id={id}>
-      <Content>
-        <Title>{about.title}</Title>
-        <Description dangerouslySetInnerHTML={{ __html: about.description }} />
-      </Content>
+      <Container>
+        <TitleWrapper>
+          <Title>{about.title}</Title>
+        </TitleWrapper>
+        <ContentWrapper>
+          <Image
+            fixed={about.image.fixed}
+            imgStyle={{
+              objectFit: 'contain',
+            }}
+          />
+          <Content>
+            <Description dangerouslySetInnerHTML={{ __html: about.description }} />
+          </Content>
+        </ContentWrapper>
+      </Container>
     </AboutWrapper>
   )
 }

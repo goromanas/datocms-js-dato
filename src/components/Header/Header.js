@@ -22,7 +22,7 @@ const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader }) => {
   if (slimHeader) {
     headerHeight = '40px'
   } else {
-    headerHeight = scrolled ? '40px' : '120px'
+    headerHeight = scrolled ? '40px' : '50px'
   }
 
   return (

@@ -6,6 +6,11 @@ export const useAbout = () => {
         about: datoCmsAbout {
           title
           description
+          image {
+            fixed(width: 300) {
+              ...GatsbyDatoCmsFixed
+            }
+          }
         }
       }
     `,

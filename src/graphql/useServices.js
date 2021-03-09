@@ -10,6 +10,7 @@ export const useServices = () => {
               title
               price
               description
+              additionalInfo
             }
           }
         }

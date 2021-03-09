@@ -1,11 +1,22 @@
 import React from 'react'
-import { Card, Title, Price, Description, CTA, PriceContainer } from './ServiceCard.style'
+import {
+  Card,
+  Title,
+  Price,
+  Description,
+  CTA,
+  PriceContainer,
+  AdditionalInfo,
+  DescriptionContainer,
+} from './ServiceCard.style'
 import { addCurrency } from '../../../libs'
 import Button from '../../core/Button/Button'
 import QuestionMark from './QuestionMark'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
-const ServiceCard = ({ service, tooltip, setTopic }) => {
+const ServiceCard = ({ service, tooltip, setTopic, additionalInfo }) => {
+  const showAdditionalInfo = additionalInfo !== '' && additionalInfo !== null
+
   return (
     <Card>
       <Title>{service.title}</Title>
@@ -13,7 +24,10 @@ const ServiceCard = ({ service, tooltip, setTopic }) => {
         <Price>{addCurrency(service.price)}</Price>
         <QuestionMark tooltip={tooltip} />
       </PriceContainer>
-      <Description dangerouslySetInnerHTML={{ __html: service.description }} />
+      <DescriptionContainer>
+        <Description dangerouslySetInnerHTML={{ __html: service.description }} />
+        {showAdditionalInfo && <AdditionalInfo>{additionalInfo}</AdditionalInfo>}
+      </DescriptionContainer>
       <CTA>
         <AnchorLink to="/#kontaktai" stripHash>
           <Button title="Užsisakyti" color="white" onClick={() => setTopic(service.title)} />

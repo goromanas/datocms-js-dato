@@ -9,10 +9,10 @@ import {
   Title,
   SocialWrapper,
   ContactItem,
+  SocialLink,
 } from './Contact.style'
 import Form from './Form/Form'
 import EnvelopeIcon from './Icons/EnvelopeIcon'
-import LinkedinIcon from './Icons/LinkedinIcon'
 import PhoneIcon from './Icons/PhoneIcon'
 import BackToTop from '../core/BackToTop/BackToTop'
 import { Parallax } from 'react-scroll-parallax'
@@ -33,15 +33,11 @@ const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
             <SocialWrapper>
               <ContactItem>
                 <PhoneIcon />
-                <div>{contact.phone}</div>
+                <SocialLink>{contact.phone}</SocialLink>
               </ContactItem>
               <ContactItem>
                 <EnvelopeIcon />
-                <div>{contact.email}</div>
-              </ContactItem>
-              <ContactItem>
-                <LinkedinIcon />
-                <div>{contact.linkedin}</div>
+                <SocialLink>{contact.email}</SocialLink>
               </ContactItem>
             </SocialWrapper>
             <Form services={services.edges} contact={contact} topic={topic} setTopic={setTopic} />

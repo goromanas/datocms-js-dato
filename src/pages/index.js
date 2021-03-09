@@ -8,6 +8,7 @@ import Contact from '../components/Contact/Contact'
 import Separator from '../components/core/Separator/Separator'
 import 'antd/dist/antd.css'
 import { useHideInformation } from '../graphql/useHideInformation'
+import Coaching from '../components/Coaching/Coaching'
 
 export default function Index() {
   const [topic, setTopic] = useState('')
@@ -17,6 +18,7 @@ export default function Index() {
   return (
     <Layout title="Pagrindinis">
       <Hero />
+      <Coaching id="apie-koucinga" />
       <About id="apie-mane" />
       <Services id="paslaugos" setTopic={setTopic} />
       {!hideTestimonials && <Testimonials id="atsiliepimai" />}

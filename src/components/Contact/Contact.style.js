@@ -37,7 +37,8 @@ export const Title = styled.h2`
 export const SocialWrapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 50% 50%;
+  text-align: center;
   padding: 1rem 2rem;
   margin-bottom: 3rem;
 `
@@ -49,6 +50,10 @@ export const ContactItem = styled.div`
   letter-spacing: 0.72px;
   font-weight: 300;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+`
+
+export const SocialLink = styled.div`
+  padding-left: 0.5rem;
 `
