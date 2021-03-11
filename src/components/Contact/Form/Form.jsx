@@ -22,7 +22,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       city: '',
     },
     validationSchema: Yup.object({
-      name: Yup.string().max(15, 'Daugiausiai 15 ženklų').required('Prašome įvesti savo vardą'),
+      // name: Yup.string().max(15, 'Daugiausiai 15 ženklų').required('Prašome įvesti savo vardą'),
       email: Yup.string().email('Neteisingas el. paštas').required('Prašome įvesti savo el. paštą'),
       phone: Yup.number()
         .typeError('Neteisingas telefono numeris')

@@ -3,7 +3,7 @@ import { colors } from '../../../styles/colors'
 
 export const Wrapper = styled.div`
   margin-top: 3rem;
-  width: 300px;
+  width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;

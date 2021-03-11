@@ -1,12 +1,19 @@
 import styled from 'styled-components'
 import { default as BackgroundImageLib } from 'gatsby-background-image'
+import { media } from '../../styles/media'
 
 export const CardWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   top: -115px;
+
+  ${media.lg`
+    flex-direction: row;
+    align-items: stretch;
+  `}
 `
 
 export const ServiceSection = styled.section`

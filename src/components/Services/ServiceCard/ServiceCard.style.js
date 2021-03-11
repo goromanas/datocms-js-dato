@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
+import { media } from '../../../styles/media'
 
 export const Card = styled.div`
   width: 350px;
@@ -10,6 +11,11 @@ export const Card = styled.div`
   display: grid;
   grid-template-rows: 25% 15% 50% 10%;
   text-align: center;
+  margin-bottom: 2rem;
+
+  ${media.lg`
+    margin-bottom: 0;
+  `}
 `
 
 export const Title = styled.h3`

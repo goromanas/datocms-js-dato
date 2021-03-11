@@ -14,8 +14,8 @@ export const Container = styled(ContainerLib)`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  background: #fff;
-  padding: 0 2rem;
+  background: ${colors.white};
+  padding: 0 4rem;
   align-items: center;
 `
 
@@ -40,7 +40,7 @@ export const Description = styled.div`
     font-weight: 300;
     letter-spacing: 0.45px;
     line-height: 2rem;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 `
 
@@ -49,7 +49,7 @@ export const Image = styled(Img)`
 `
 
 export const TitleWrapper = styled.div`
-  background: #fff;
+  background: ${colors.white};
   display: flex;
   width: 100%;
   justify-content: center;

@@ -1,3 +1,5 @@
+import { breakpointsWithoutPixels } from '../styles/breakpoints'
+
 export const addCurrency = (price) => {
   return `${price} EUR`
 }
@@ -28,4 +30,20 @@ export const checkWhichPage = (page) => {
 
 export const getCurrentPath = () => {
   return window.location.pathname
+}
+
+export const getTestitmonialtemsLength = () => {
+  const currentWidth = window.innerWidth
+  console.log(currentWidth)
+  let number = 1
+  if (currentWidth <= breakpointsWithoutPixels.xs) {
+    number = 1
+  }
+  if (currentWidth >= breakpointsWithoutPixels.sm) {
+    number = 3
+  }
+  if (currentWidth >= breakpointsWithoutPixels.lg) {
+    number = 5
+  }
+  return number
 }
