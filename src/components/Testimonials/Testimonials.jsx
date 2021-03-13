@@ -18,8 +18,11 @@ const Testimonials = ({ id }) => {
   const [slidesToShow, setSlidesToShow] = useState(getTestitmonialtemsLength())
 
   useEffect(() => {
-    setSlidesToShow(getTestitmonialtemsLength())
-  }, [window.innerWidth])
+    if (typeof window !== 'undefined') {
+      setSlidesToShow(getTestitmonialtemsLength())
+    }
+  }, [])
+
   const carousel = useRef()
 
   const settings = {

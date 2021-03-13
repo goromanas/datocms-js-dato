@@ -33,17 +33,18 @@ export const getCurrentPath = () => {
 }
 
 export const getTestitmonialtemsLength = () => {
-  const currentWidth = window.innerWidth
-  console.log(currentWidth)
-  let number = 1
-  if (currentWidth <= breakpointsWithoutPixels.xs) {
-    number = 1
+  if (typeof window !== 'undefined') {
+    const currentWidth = window.innerWidth
+    let number = 1
+    if (currentWidth <= breakpointsWithoutPixels.xs) {
+      number = 1
+    }
+    if (currentWidth >= breakpointsWithoutPixels.sm) {
+      number = 3
+    }
+    if (currentWidth >= breakpointsWithoutPixels.lg) {
+      number = 5
+    }
+    return number
   }
-  if (currentWidth >= breakpointsWithoutPixels.sm) {
-    number = 3
-  }
-  if (currentWidth >= breakpointsWithoutPixels.lg) {
-    number = 5
-  }
-  return number
 }
