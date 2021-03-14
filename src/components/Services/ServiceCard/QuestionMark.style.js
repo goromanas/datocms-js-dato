@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
+import { Popover as PopoverLib } from 'antd'
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -7,8 +8,8 @@ export const Wrapper = styled.div`
   padding-left: 2px;
   right: 0;
   color: ${colors.gray};
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,4 +18,11 @@ export const Wrapper = styled.div`
   border-radius: 50%;
   cursor: pointer;
   user-select: none;
+`
+
+export const Popover = styled(PopoverLib)``
+
+export const PopoverContainer = styled.div`
+  max-width: 200px;
+  font-size: 1rem;
 `

@@ -24,7 +24,7 @@ const Services = ({ id, setTopic }) => {
             <ServiceCard
               key={service.node.id}
               service={service.node}
-              tooltip={page.node.tooltip}
+              tooltip={service.node.tooltip}
               setTopic={setTopic}
               additionalInfo={service.node.additionalInfo}
             />

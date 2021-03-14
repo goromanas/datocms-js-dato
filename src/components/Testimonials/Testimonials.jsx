@@ -11,17 +11,18 @@ import {
 } from './Testimonials.style'
 import { useTestimonial } from '../../graphql/useTestimonial'
 import SingleTestimonial from './SingleTestimonial/SingleTestimonial'
-import { getTestitmonialtemsLength } from '../../libs'
+import { getTestimonialtemsLength } from '../../libs'
 
 const Testimonials = ({ id }) => {
+  const { testimonials } = useTestimonial()
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [slidesToShow, setSlidesToShow] = useState(getTestitmonialtemsLength())
+  const [slidesToShow, setSlidesToShow] = useState(getTestimonialtemsLength(testimonials.edges))
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      setSlidesToShow(getTestitmonialtemsLength())
+      setSlidesToShow(getTestimonialtemsLength(testimonials.edges))
     }
-  }, [])
+  }, [testimonials.edges])
 
   const carousel = useRef()
 
@@ -42,8 +43,6 @@ const Testimonials = ({ id }) => {
     swipeToSlide: true,
     centerMode: true,
   }
-
-  const { testimonials } = useTestimonial()
 
   function handleLeft() {
     carousel.current.prev()

@@ -11,6 +11,7 @@ export const useServices = () => {
               price
               description
               additionalInfo
+              tooltip
             }
           }
         }

@@ -16,6 +16,7 @@ export const SliderContainer = styled.div`
 
 export const Wrapper = styled.div`
   height: 500px;
+  margin: 0 1rem;
 `
 
 export const Title = styled.h2`

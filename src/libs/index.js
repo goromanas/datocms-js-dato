@@ -32,7 +32,8 @@ export const getCurrentPath = () => {
   return window.location.pathname
 }
 
-export const getTestitmonialtemsLength = () => {
+export const getTestimonialtemsLength = (items) => {
+  const length = items.length
   if (typeof window !== 'undefined') {
     const currentWidth = window.innerWidth
     let number = 1
@@ -43,7 +44,11 @@ export const getTestitmonialtemsLength = () => {
       number = 3
     }
     if (currentWidth >= breakpointsWithoutPixels.lg) {
-      number = 5
+      if (length < 5) {
+        number = length
+      } else {
+        number = 5
+      }
     }
     return number
   }

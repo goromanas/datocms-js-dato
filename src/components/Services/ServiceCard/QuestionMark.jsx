@@ -1,14 +1,14 @@
 import React from 'react'
-import { Wrapper } from './QuestionMark.style'
-import { Tooltip } from 'antd'
+import { Wrapper, Popover, PopoverContainer } from './QuestionMark.style'
 
 const QuestionMark = ({ tooltip }) => {
+  const PopoverContent = () => {
+    return <PopoverContainer>{tooltip}</PopoverContainer>
+  }
   return (
-    <Wrapper>
-      <Tooltip title={tooltip} placement="topLeft">
-        ?
-      </Tooltip>
-    </Wrapper>
+    <Popover content={<PopoverContent />} placement="top">
+      <Wrapper>?</Wrapper>
+    </Popover>
   )
 }
 

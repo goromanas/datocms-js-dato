@@ -46,3 +46,12 @@ export const Button = styled(ButtonLib)`
     margin-right: 1rem;
   }
 `
+
+export const Description = styled.div`
+  margin-top: 2rem;
+  font-size: 1.125rem;
+  color: ${colors.white};
+  max-width: 500px;
+  font-family: 'proxima-nova';
+  font-weight: 300;
+`

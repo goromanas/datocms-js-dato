@@ -1,7 +1,16 @@
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React from 'react'
 import { useHero } from '../../graphql/useHero'
-import { Image, HeroWrapper, Title, Subtitle, Content, CTA, Button } from './Hero.style'
+import {
+  Image,
+  HeroWrapper,
+  Title,
+  Subtitle,
+  Content,
+  CTA,
+  Button,
+  Description,
+} from './Hero.style'
 import { Parallax } from 'react-scroll-parallax'
 
 const Hero = () => {
@@ -15,6 +24,7 @@ const Hero = () => {
       <Content>
         <Title>{hero.title}</Title>
         <Subtitle>{hero.subtitle}</Subtitle>
+        <Description>{hero.description}</Description>
         <CTA>
           <AnchorLink to="/#paslaugos" stripHash>
             <Button title="Paslaugos" />

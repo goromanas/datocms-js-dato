@@ -6,6 +6,7 @@ export const useHero = () => {
         hero: datoCmsHero {
           title
           subtitle
+          description
           heroImage {
             url
             fluid(maxWidth: 1100) {

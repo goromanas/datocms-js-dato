@@ -28,11 +28,38 @@ export const Title = styled.h1`
 `
 
 export const Description = styled.div`
-  p {
-    font-family: proxima-nova, sans-serif;
+  font-family: proxima-nova, sans-serif;
+  div {
+    font-size: 1rem;
     font-weight: 300;
     letter-spacing: 0.45px;
     line-height: 2rem;
-    padding: 1rem 0;
+    padding-top: 1rem;
+  }
+
+  h3 {
+    margin-top: 2rem;
+  }
+  ul {
+    margin-top: 1rem;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+
+  li {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-left: 1rem;
+
+    &::before {
+      content: '>';
+      color: ${colors.primary};
+      font-weight: 500;
+      margin-left: -1rem;
+      font-size: 1.2rem;
+      padding-right: 0.5rem;
+    }
   }
 `
