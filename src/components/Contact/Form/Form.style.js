@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { Input as InputLib, Select as SelectLib } from 'antd'
+import { Input as InputLib, Select as SelectLib, Checkbox as CheckboxLib } from 'antd'
+import { colors } from '../../../styles/colors'
 
 const { TextArea: TextAreaLib } = InputLib
 
@@ -10,7 +11,7 @@ export const TextArea = styled(TextAreaLib)`
 export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 `
 export const Input = styled(InputLib)`
   padding: 0.8rem;
@@ -49,4 +50,15 @@ export const Select = styled(SelectLib)`
     align-items: center;
     border-radius: 0;
   }
+`
+
+export const Checkbox = styled(CheckboxLib)`
+  margin-right: 1rem;
+
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: ${colors.primary};
+  }
+`
+export const FormContainer = styled.form`
+  padding: 0 2rem;
 `

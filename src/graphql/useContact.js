@@ -9,6 +9,7 @@ export const useContact = () => {
           linkedin
           phone
           title
+          agreement
           image {
             url
             fluid(maxWidth: 1328) {

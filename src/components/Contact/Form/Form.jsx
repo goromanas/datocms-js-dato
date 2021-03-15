@@ -2,7 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { message, Form as AntForm, Row, Col } from 'antd'
-import { TextArea, ButtonWrapper, Input, Select, StyledInput } from './Form.style'
+import { TextArea, ButtonWrapper, Input, Select, Checkbox, FormContainer } from './Form.style'
 import Button from '../../core/Button/Button'
 
 const { Option } = Select
@@ -19,7 +19,8 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       name: '',
       email: '',
       phone: '',
-      city: '',
+      subject: '',
+      agreement: false,
     },
     validationSchema: Yup.object({
       // name: Yup.string().max(15, 'Daugiausiai 15 ženklų').required('Prašome įvesti savo vardą'),
@@ -28,6 +29,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         .typeError('Neteisingas telefono numeris')
         .positive('Neteisingas telefono numeris')
         .integer('Neteisingas telefono numeris'),
+      agreement: Yup.boolean().required(),
     }),
     onSubmit: async (values) => {
       // values['spalva'] = color
@@ -48,7 +50,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
     },
   })
   return (
-    <form
+    <FormContainer
       onSubmit={formik.handleSubmit}
       className={className}
       data-netlify="true"
@@ -156,9 +158,22 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         />
       </AntForm.Item>
       <ButtonWrapper>
+        <AntForm.Item
+          validateStatus={formik.touched.agreement && formik.errors.agreement ? 'error' : null}
+          help={formik.errors.agreement}
+        >
+          <Checkbox
+            checked={formik.values.agreement}
+            onChange={formik.handleChange}
+            name="agreement"
+          >
+            {contact.agreement}
+          </Checkbox>
+        </AntForm.Item>
+
         <Button htmlType="submit" color="white" title={contact.cta} />
       </ButtonWrapper>
-    </form>
+    </FormContainer>
   )
 }
 
