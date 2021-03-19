@@ -55,3 +55,16 @@ export const Description = styled.div`
   font-family: 'proxima-nova';
   font-weight: 300;
 `
+
+export const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 25%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+`
+
+export const ImageWrapper = styled.div`
+  position: relative;
+`

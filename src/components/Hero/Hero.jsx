@@ -10,6 +10,8 @@ import {
   CTA,
   Button,
   Description,
+  Overlay,
+  ImageWrapper,
 } from './Hero.style'
 import { Parallax } from 'react-scroll-parallax'
 
@@ -19,7 +21,10 @@ const Hero = () => {
   return (
     <HeroWrapper>
       <Parallax className="custom-class" y={[-40, 30]}>
-        <Image fluid={hero.heroImage.fluid} />
+        <ImageWrapper>
+          <Image fluid={hero.heroImage.fluid} />
+          <Overlay />
+        </ImageWrapper>
       </Parallax>
       <Content>
         <Title>{hero.title}</Title>
