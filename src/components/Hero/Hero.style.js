@@ -59,7 +59,7 @@ export const Description = styled.div`
 export const Overlay = styled.div`
   position: absolute;
   top: 0;
-  right: 0;
+  right: 2rem;
   bottom: 0;
   left: 25%;
   background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
