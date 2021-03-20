@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
+import { media } from '../../styles/media'
 
 export const CoachingWrapper = styled.section`
   background: #fff;
@@ -29,6 +30,8 @@ export const Title = styled.h1`
 
 export const Description = styled.div`
   font-family: proxima-nova, sans-serif;
+  padding: 0 2rem;
+
   div {
     font-size: 1rem;
     font-weight: 300;
@@ -62,4 +65,8 @@ export const Description = styled.div`
       padding-right: 0.5rem;
     }
   }
+
+  ${media.md`
+    padding: 0;
+  `}
 `

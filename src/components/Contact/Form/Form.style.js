@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { Input as InputLib, Select as SelectLib, Checkbox as CheckboxLib } from 'antd'
 import { colors } from '../../../styles/colors'
+import { media } from '../../../styles/media'
 
 const { TextArea: TextAreaLib } = InputLib
 
@@ -12,6 +13,11 @@ export const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+
+  ${media.md`
+    flex-direction: row;
+  `}
 `
 export const Input = styled(InputLib)`
   padding: 0.8rem;

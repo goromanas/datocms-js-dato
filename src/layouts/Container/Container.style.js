@@ -5,7 +5,7 @@ export const StyledContainer = styled.div`
   padding: 0 1rem;
   margin: 0 auto;
 
-  ${media.lg`
+  ${media.md`
     max-width: 1140px;
     padding: 0;
   `}

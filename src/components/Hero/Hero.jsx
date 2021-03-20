@@ -22,7 +22,13 @@ const Hero = () => {
     <HeroWrapper>
       <Parallax className="custom-class" y={[-40, 30]}>
         <ImageWrapper>
-          <Image fluid={hero.heroImage.fluid} />
+          <Image
+            fluid={hero.heroImage.fluid}
+            imgStyle={{
+              objectFit: 'cover',
+              objectPosition: '0% 50%',
+            }}
+          />
           <Overlay />
         </ImageWrapper>
       </Parallax>

@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
+import { media } from '../../../styles/media'
 
 export const ButtonWrapper = styled.div`
   background-color: ${({ type }) => (type === 'outline' ? 'transparent' : colors.primary)};
   color: ${({ type, color }) => (type === 'outline' || color ? '#fff' : colors.dark)};
   border: ${({ type }) => (type === 'outline' ? `solid 1px ${colors.primary}` : 'none')};
-  width: 180px;
-  height: 55px;
+  padding: 0.8rem 1.2rem;
   font-weight: 400;
   text-transform: uppercase;
   display: flex;
@@ -21,4 +21,9 @@ export const ButtonWrapper = styled.div`
     filter: brightness(1.1);
     background-color: ${colors.primary};
   }
+
+  ${media.md`
+    width: 180px;
+    height: 55px;
+  `}
 `

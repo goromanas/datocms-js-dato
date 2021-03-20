@@ -58,7 +58,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       netlify-honeypot="bot-field"
     >
       <Row gutter={16}>
-        <Col span={12}>
+        <Col sm={24} md={12} lg={12}>
           <input type="hidden" name="form-name" value="contact" />
 
           <AntForm.Item
@@ -84,7 +84,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
             />
           </AntForm.Item>
         </Col>
-        <Col span={12}>
+        <Col sm={24} md={12} lg={12}>
           <AntForm.Item
             validateStatus={formik.touched.email && formik.errors.email ? 'error' : null}
             help={formik.errors.email}
@@ -106,7 +106,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         </Col>
       </Row>
       <Row gutter={16}>
-        <Col span={12}>
+        <Col sm={24} md={12} lg={12}>
           <AntForm.Item
             validateStatus={formik.touched.phone && formik.errors.phone ? 'error' : null}
             help={formik.errors.phone}
@@ -126,7 +126,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
             />
           </AntForm.Item>
         </Col>
-        <Col span={12}>
+        <Col sm={24} md={12} lg={12}>
           <AntForm.Item>
             {/* <label htmlFor="city">Dominanti paslauga</label> */}
             <Select

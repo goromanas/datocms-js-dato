@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useMenu } from '../../graphql/useMenu'
-import { MenuItem, MenuWrapper } from './Menu.style'
+import {
+  MenuItem,
+  MenuWrapper,
+  MobileWrapper,
+  StyledBurger,
+  MainWrapper,
+  MobileMenuItem,
+} from './Menu.style'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useHideInformation } from '../../graphql/useHideInformation'
 import { checkWhichPage, generateMenuLink, handleMenuItems } from '../../libs'
@@ -11,16 +18,33 @@ const Menu = ({ displayArticlesMenu = false }) => {
   const { itemsToHide } = useHideInformation()
   const { hideTestimonials, hideArticles } = itemsToHide
   const items = handleMenuItems(menuItems, hideTestimonials, hideArticles)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  const handleClick = () => {
+    setMobileMenuOpen((prev) => !prev)
+  }
 
   const MainMenu = () => {
     return (
-      <>
+      <MainWrapper>
         {items.map((item) => (
           <MenuItem key={item.node.id}>
             <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title} </AnchorLink>
           </MenuItem>
         ))}
-      </>
+      </MainWrapper>
+    )
+  }
+
+  const MobileMenu = () => {
+    return (
+      <MobileWrapper menuOpen={mobileMenuOpen}>
+        {items.map((item) => (
+          <MobileMenuItem key={item.node.id}>
+            <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title} </AnchorLink>
+          </MobileMenuItem>
+        ))}
+      </MobileWrapper>
     )
   }
 
@@ -28,7 +52,7 @@ const Menu = ({ displayArticlesMenu = false }) => {
     const isArticlesPage = checkWhichPage('straipsniai')
 
     return (
-      <>
+      <MainWrapper>
         {!isArticlesPage && (
           <MenuItem key="straipsniai">
             <Link to={`/straipsniai`}>Straipsniai</Link>
@@ -37,11 +61,17 @@ const Menu = ({ displayArticlesMenu = false }) => {
         <MenuItem key="pagrindinis">
           <Link to={`/`}>Pradžia</Link>
         </MenuItem>
-      </>
+      </MainWrapper>
     )
   }
 
-  return <MenuWrapper>{displayArticlesMenu ? <ArticlesMenu /> : <MainMenu />}</MenuWrapper>
+  return (
+    <MenuWrapper>
+      <StyledBurger onClick={() => handleClick()} menuOpen={mobileMenuOpen} />
+      {displayArticlesMenu ? <ArticlesMenu /> : <MainMenu />}
+      <MobileMenu />
+    </MenuWrapper>
+  )
 }
 
 export default Menu

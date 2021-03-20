@@ -1,11 +1,16 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { colors } from '../../styles/colors'
+import { media } from '../../styles/media'
 import { default as ContainerLib } from '../../layouts/Container/Container'
 
 export const AboutWrapper = styled.section`
   margin-top: 20vh;
-  height: 70vh;
+  min-height: 70vh;
+
+  ${media.md`
+    height: 70vh;
+  `}
 `
 
 export const Container = styled(ContainerLib)`
@@ -15,14 +20,23 @@ export const Container = styled(ContainerLib)`
 export const ContentWrapper = styled.div`
   display: flex;
   background: ${colors.white};
-  padding: 0 4rem;
+  padding: 0;
   align-items: center;
+  flex-direction: column;
+
+  ${media.md`
+    padding: 0 4rem;
+    flex-direction: row;
+  `}
 `
 
 export const Content = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+
+  ${media.md`
   flex: 2;
+  `}
 `
 
 export const Title = styled.h2`
@@ -45,7 +59,9 @@ export const Description = styled.div`
 `
 
 export const Image = styled(Img)`
-  flex: 1;
+  ${media.md`
+    flex: 1;
+  `}
 `
 
 export const TitleWrapper = styled.div`

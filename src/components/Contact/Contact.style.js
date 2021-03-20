@@ -1,9 +1,14 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { media } from '../../styles/media'
 
 export const Image = styled(Img)`
-  width: 850px;
-  max-height: 650px;
+  width: 100%;
+
+  ${media.md`
+    width: 850px;
+    max-height: 650px;
+  `}
 `
 export const Wrapper = styled.div`
   position: relative;
@@ -15,8 +20,7 @@ export const Wrapper = styled.div`
 
 export const ContactFormWrapper = styled.div`
   background: #fff;
-  height: 600px;
-  width: 612px;
+  width: 100%;
   position: absolute;
   left: 0;
   top: 100px;
@@ -24,6 +28,11 @@ export const ContactFormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  ${media.md`
+    width: 612px;
+    height: 600px;
+  `}
 `
 
 export const Title = styled.h2`
@@ -37,10 +46,15 @@ export const Title = styled.h2`
 export const SocialWrapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 100%;
   text-align: center;
   padding: 1rem 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+
+  ${media.md`
+    grid-template-columns: 50% 50%;
+    margin-bottom: 3rem;
+  `}
 `
 
 export const ContactItem = styled.div`
@@ -52,6 +66,11 @@ export const ContactItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
+
+  ${media.md`
+    margin-bottom: 0;
+  `}
 `
 
 export const SocialLink = styled.div`

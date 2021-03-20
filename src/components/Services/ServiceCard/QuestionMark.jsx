@@ -6,7 +6,7 @@ const QuestionMark = ({ tooltip }) => {
     return <PopoverContainer>{tooltip}</PopoverContainer>
   }
   return (
-    <Popover content={<PopoverContent />} placement="top">
+    <Popover content={<PopoverContent />} placement="topLeft">
       <Wrapper>?</Wrapper>
     </Popover>
   )
