@@ -23,17 +23,10 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       agreement: false,
     },
     validationSchema: Yup.object({
-      // name: Yup.string().max(15, 'Daugiausiai 15 ženklų').required('Prašome įvesti savo vardą'),
       email: Yup.string().email('Neteisingas el. paštas').required('Prašome įvesti savo el. paštą'),
-      phone: Yup.number()
-        .typeError('Neteisingas telefono numeris')
-        .positive('Neteisingas telefono numeris')
-        .integer('Neteisingas telefono numeris'),
       agreement: Yup.boolean().required(),
     }),
     onSubmit: async (values) => {
-      // values['spalva'] = color
-
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -43,7 +36,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         }),
       })
         .then(() => {
-          message.success('Ačiū! Netrukus su jumis susisieksime')
+          message.success('Ačiū! Netrukus su jumis susisieksiu')
           formik.resetForm()
         })
         .catch((error) => message.error('Nepavyko išsiųsti užklausos. Bandykite dar kartą'))
@@ -110,12 +103,10 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
             validateStatus={formik.touched.phone && formik.errors.phone ? 'error' : null}
             help={formik.errors.phone}
           >
-            {/* <label htmlFor="phone">Telefono numeris</label> */}
             <Input
               placeholder="Telefono Nr."
               allowClear
               maxLength="10"
-              required
               id="phone"
               name="phone"
               type="phone"
@@ -147,7 +138,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         validateStatus={formik.touched.phone && formik.errors.phone ? 'error' : null}
         help={formik.errors.phone}
       >
-        {/* <label htmlFor="phone">Telefono numeris</label> */}
         <TextArea
           placeholder="Jūsų žinutė"
           maxLength={2000}
@@ -170,7 +160,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
           </Checkbox>
         </AntForm.Item>
 
-        <Button htmlType="submit" color="white" title={contact.cta} />
+        <Button type="submit" color="white" title={contact.cta} />
       </ButtonWrapper>
     </FormContainer>
   )
