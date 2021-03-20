@@ -53,3 +53,12 @@ export const getTestimonialtemsLength = (items) => {
     return number
   }
 }
+
+export const isMobileDevice = () => {
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth < breakpointsWithoutPixels.md) {
+      return true
+    }
+    return false
+  }
+}

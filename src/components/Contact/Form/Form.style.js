@@ -67,4 +67,7 @@ export const Checkbox = styled(CheckboxLib)`
 `
 export const FormContainer = styled.form`
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `

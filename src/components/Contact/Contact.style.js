@@ -15,23 +15,31 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  min-height: 88vh;
+  min-height: 105vh;
+
+  ${media.md`
+    min-height: 88vh;
+  `}
 `
 
 export const ContactFormWrapper = styled.div`
   background: #fff;
   width: 100%;
-  position: absolute;
-  left: 0;
-  top: 100px;
+  position: static;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
 
   ${media.md`
+    position: absolute;
     width: 612px;
     height: 600px;
+    left: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
   `}
 `
 

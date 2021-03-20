@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { PageTitle } from './Logo.style'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 const Logo = () => {
   return (
-    <Link to="/">
+    <AnchorLink to="/#page-top">
       <PageTitle>JS</PageTitle>
-    </Link>
+    </AnchorLink>
   )
 }
 

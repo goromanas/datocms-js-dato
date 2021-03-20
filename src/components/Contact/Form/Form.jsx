@@ -58,7 +58,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       netlify-honeypot="bot-field"
     >
       <Row gutter={16}>
-        <Col sm={24} md={12} lg={12}>
+        <Col sm={24} md={24} lg={12}>
           <input type="hidden" name="form-name" value="contact" />
 
           <AntForm.Item
@@ -68,7 +68,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
             hasFeedback={formik.touched.name && !formik.errors.name}
             help={formik.errors.name}
           >
-            {/* <label htmlFor="name">Jūsų vardas</label> */}
             <Input
               allowClear
               required

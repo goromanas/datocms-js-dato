@@ -22,8 +22,14 @@ export const MobileMenuItem = styled.div`
   padding: 0 1rem;
   letter-spacing: 2.7px;
   font-style: normal;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-family: 'proxima-nova-light', sans-serif;
+
+  a {
+    color: ${colors.white};
+  }
 
   &:last-child {
     padding: 0;
@@ -54,15 +60,15 @@ export const MobileWrapper = styled.div`
   position: absolute;
   top: 50px;
   left: 0;
-  right: 0;
-  background: ${colors.white};
+  width: 100%;
+  background: ${colors.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
   transform: ${({ menuOpen }) => (menuOpen ? '' : 'translateX(110%)')};
   opacity: ${({ menuOpen }) => (menuOpen ? '1 ' : '0')};
   transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 
   ${media.md`
       transform: translateX(110%);

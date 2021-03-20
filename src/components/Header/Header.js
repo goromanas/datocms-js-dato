@@ -3,12 +3,13 @@ import Logo from '../Logo/Logo'
 import Menu from '../Menu/Menu'
 import { Wrapper, HeaderContainer } from './Header.style'
 import Container from '../../layouts/Container/Container'
+import { isMobileDevice } from '../../libs'
 
 const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader }) => {
   const [scrolled, setScrolled] = useState(false)
   const handleScroll = () => {
     const offset = window.scrollY
-    if (offset > 50) {
+    if (offset > 50 && !isMobileDevice()) {
       setScrolled(true)
     } else {
       setScrolled(false)

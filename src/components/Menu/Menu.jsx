@@ -40,7 +40,7 @@ const Menu = ({ displayArticlesMenu = false }) => {
     return (
       <MobileWrapper menuOpen={mobileMenuOpen}>
         {items.map((item) => (
-          <MobileMenuItem key={item.node.id}>
+          <MobileMenuItem key={`${item.node.id}-mobile`} onClick={() => setMobileMenuOpen(false)}>
             <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title} </AnchorLink>
           </MobileMenuItem>
         ))}
