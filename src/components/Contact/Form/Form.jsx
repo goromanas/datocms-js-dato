@@ -20,11 +20,12 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       email: '',
       phone: '',
       subject: '',
+      message: '',
       agreement: false,
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Neteisingas el. paštas').required('Prašome įvesti savo el. paštą'),
-      agreement: Yup.boolean().required(),
+      agreement: Yup.boolean().required().oneOf([true], 'Prašome sutikti su sąlyga'),
     }),
     onSubmit: async (values) => {
       fetch('/', {
@@ -71,7 +72,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.name}
-              // prefix={<UserOutlined />}
               rules={formik.touched.name && formik.errors.name}
             />
           </AntForm.Item>
@@ -81,7 +81,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
             validateStatus={formik.touched.email && formik.errors.email ? 'error' : null}
             help={formik.errors.email}
           >
-            {/* <label htmlFor="email">El. paštas</label> */}
             <Input
               placeholder="El. paštas"
               allowClear
@@ -92,7 +91,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
-              // prefix={<MailOutlined />}
             />
           </AntForm.Item>
         </Col>
@@ -118,7 +116,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         </Col>
         <Col sm={24} md={12} lg={12}>
           <AntForm.Item>
-            {/* <label htmlFor="city">Dominanti paslauga</label> */}
             <Select
               placeholder="Dominanti paslauga"
               className="custom-select"
@@ -144,6 +141,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.message}
+          name="message"
         />
       </AntForm.Item>
       <ButtonWrapper>
@@ -154,12 +152,12 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
           <Checkbox
             checked={formik.values.agreement}
             onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
             name="agreement"
           >
             {contact.agreement}
           </Checkbox>
         </AntForm.Item>
-
         <Button type="submit" color="white" title={contact.cta} />
       </ButtonWrapper>
     </FormContainer>
