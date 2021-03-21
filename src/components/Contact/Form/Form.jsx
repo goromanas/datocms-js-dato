@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { message, Form as AntForm, Row, Col } from 'antd'
@@ -8,6 +8,7 @@ import Button from '../../core/Button/Button'
 const { Option } = Select
 
 const Form = ({ className, services, contact, topic, setTopic }) => {
+  const [formValues, setFormValues] = useState({})
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -28,7 +29,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       agreement: Yup.boolean().required().oneOf([true], 'Prašome sutikti su sąlyga'),
     }),
     onSubmit: async (values) => {
-      values['subject'] = topic
+      setFormValues({ subject: topic, ...values })
       console.log(values)
       fetch('/', {
         method: 'POST',
@@ -36,7 +37,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
         body: encode({
           'form-name': 'contact',
           subject: topic,
-          ...values,
+          ...formValues,
         }),
       })
         .then(() => {
@@ -126,6 +127,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               onSelect={(e) => setTopic(e)}
               name="subject"
               id="subject"
+              type="subject"
             >
               {services.map((service) => (
                 <Option value={service.node.title} key={service.node.id}>
