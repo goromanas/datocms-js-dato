@@ -125,6 +125,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               value={topic || null}
               onSelect={(e) => setTopic(e)}
               name="subject"
+              id="subject"
             >
               {services.map((service) => (
                 <Option value={service.node.title} key={service.node.id}>
