@@ -28,6 +28,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       agreement: Yup.boolean().required().oneOf([true], 'Prašome sutikti su sąlyga'),
     }),
     onSubmit: async (values) => {
+      values['subject'] = topic
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
