@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 import { message, Form as AntForm, Row, Col } from 'antd'
@@ -8,7 +8,6 @@ import Button from '../../core/Button/Button'
 const { Option } = Select
 
 const Form = ({ className, services, contact, topic, setTopic }) => {
-  const [formValues, setFormValues] = useState({})
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -20,7 +19,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       name: '',
       email: '',
       phone: '',
-      subject: '',
+      subject: topic,
       message: '',
       agreement: false,
     },
@@ -29,15 +28,13 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       agreement: Yup.boolean().required().oneOf([true], 'Prašome sutikti su sąlyga'),
     }),
     onSubmit: async (values) => {
-      setFormValues({ subject: topic, ...values })
-      console.log(values)
+      values.subject = topic
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
           'form-name': 'contact',
-          subject: topic,
-          ...formValues,
+          ...values,
         }),
       })
         .then(() => {
@@ -119,7 +116,10 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
           </AntForm.Item>
         </Col>
         <Col sm={24} md={12} lg={12}>
-          <AntForm.Item>
+          <AntForm.Item
+            validateStatus={formik.touched.subject && formik.errors.subject ? 'error' : null}
+            help={formik.errors.subject}
+          >
             <Select
               placeholder="Dominanti paslauga"
               className="custom-select"
