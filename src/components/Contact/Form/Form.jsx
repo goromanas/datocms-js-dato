@@ -29,11 +29,13 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
     }),
     onSubmit: async (values) => {
       values['subject'] = topic
+      console.log(values)
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
           'form-name': 'contact',
+          subject: topic,
           ...values,
         }),
       })
