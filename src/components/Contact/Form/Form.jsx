@@ -105,7 +105,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
             <Input
               placeholder="Telefono Nr."
               allowClear
-              maxLength="10"
+              maxLength="15"
               id="phone"
               name="phone"
               type="phone"
