@@ -6,6 +6,7 @@ import { media } from '../../styles/media'
 
 export const Image = styled(Img)`
   min-height: 400px;
+  max-height: 800px;
 
   ${media.md`
     min-height: initial;

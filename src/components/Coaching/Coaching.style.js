@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
 import { media } from '../../styles/media'
+import { default as ButtonLib } from '../core/Button/Button'
 
 export const CoachingWrapper = styled.section`
   background: #fff;
@@ -31,6 +32,12 @@ export const Title = styled.h1`
 export const Description = styled.div`
   font-family: proxima-nova, sans-serif;
   padding: 0 2rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: ${({ expanded }) => (expanded ? '0' : '8')};
+  overflow: hidden;
+  width: 100%;
+  transition: all 0.3s ease-out;
 
   div {
     font-size: 1rem;
@@ -69,4 +76,13 @@ export const Description = styled.div`
   ${media.md`
     padding: 0;
   `}
+`
+export const Button = styled(ButtonLib)`
+  font-size: 0.9rem;
+  color: ${colors.primary};
+  margin: 2rem auto;
+
+  &:hover {
+    color: ${colors.white};
+  }
 `

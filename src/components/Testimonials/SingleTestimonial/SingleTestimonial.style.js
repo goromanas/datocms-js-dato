@@ -21,5 +21,5 @@ export const Content = styled.div`
 `
 
 export const Author = styled.div`
-  text-transform: uppercase;
+  font-weight: 500;
 `

@@ -26,7 +26,7 @@ const Hero = () => {
             fluid={hero.heroImage.fluid}
             imgStyle={{
               objectFit: 'cover',
-              objectPosition: '0% 50%',
+              objectPosition: '0% 0%',
             }}
           />
           <Overlay />

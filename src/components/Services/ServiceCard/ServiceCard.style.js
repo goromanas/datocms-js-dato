@@ -41,10 +41,11 @@ export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   height: 100%;
 `
 export const Description = styled.div`
+  margin-top: 2rem;
   ul {
     list-style-type: none;
   }
