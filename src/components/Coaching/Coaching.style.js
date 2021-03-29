@@ -17,7 +17,7 @@ export const CoachingWrapper = styled.section`
 
 export const Content = styled.div`
   max-width: 550px;
-  padding: 3.625rem 0 2rem;
+  padding: 2.625rem 0 1rem;
 `
 
 export const Title = styled.h1`
@@ -26,18 +26,15 @@ export const Title = styled.h1`
   font-weight: 400;
   letter-spacing: 6px;
   text-align: center;
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.75rem;
 `
 
 export const Description = styled.div`
   font-family: proxima-nova, sans-serif;
   padding: 0 2rem;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: ${({ expanded }) => (expanded ? '0' : '8')};
-  overflow: hidden;
-  width: 100%;
   transition: all 0.3s ease-out;
+  max-height: ${({ expanded }) => (expanded ? '310px' : 'initial')};
+  overflow: hidden;
 
   div {
     font-size: 1rem;

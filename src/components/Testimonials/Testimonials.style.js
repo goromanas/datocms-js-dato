@@ -9,13 +9,13 @@ export const Slider = styled(SliderLib)`
 `
 
 export const SliderContainer = styled.div`
-  /* height: 400px; */
   width: 100%;
   overflow-y: hidden;
+  height: 500px;
 `
 
 export const Wrapper = styled.div`
-  height: 500px;
+  height: 600px;
   margin: 0 1rem;
 `
 

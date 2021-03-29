@@ -4,7 +4,7 @@ import { colors } from '../../../styles/colors'
 export const Wrapper = styled.div`
   margin-top: 3rem;
   width: 100%;
-  height: 400px;
+  height: 600px;
   max-width: 600px;
   display: flex;
   flex-direction: column;

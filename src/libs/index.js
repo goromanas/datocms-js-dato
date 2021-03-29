@@ -41,7 +41,7 @@ export const getTestimonialtemsLength = (items) => {
       number = 1
     }
     if (currentWidth >= breakpointsWithoutPixels.sm) {
-      number = 3
+      number = 2
     }
     if (currentWidth >= breakpointsWithoutPixels.lg) {
       if (length < 5) {

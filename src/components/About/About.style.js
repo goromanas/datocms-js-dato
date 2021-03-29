@@ -49,6 +49,7 @@ export const Title = styled.h2`
 `
 
 export const Description = styled.div`
+  padding: 0 1rem;
   p {
     font-family: proxima-nova, sans-serif;
     font-weight: 300;
