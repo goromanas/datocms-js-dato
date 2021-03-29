@@ -84,3 +84,4 @@ export const ContactItem = styled.div`
 export const SocialLink = styled.div`
   padding-left: 0.5rem;
 `
+export const Email = styled.a``

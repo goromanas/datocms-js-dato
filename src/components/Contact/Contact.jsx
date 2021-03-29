@@ -10,6 +10,7 @@ import {
   SocialWrapper,
   ContactItem,
   SocialLink,
+  Email,
 } from './Contact.style'
 import Form from './Form/Form'
 import EnvelopeIcon from './Icons/EnvelopeIcon'
@@ -37,7 +38,9 @@ const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
               </ContactItem>
               <ContactItem>
                 <EnvelopeIcon />
-                <SocialLink>{contact.email}</SocialLink>
+                <SocialLink>
+                  <Email href={`mailto:${contact.email}`}>{contact.email}</Email>
+                </SocialLink>
               </ContactItem>
             </SocialWrapper>
             <Form services={services.edges} contact={contact} topic={topic} setTopic={setTopic} />
