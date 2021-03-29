@@ -6,6 +6,7 @@ export const useCoaching = () => {
         coaching: datoCmsCoaching {
           title
           description
+          expandableDescription
         }
       }
     `,
