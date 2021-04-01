@@ -1,22 +1,43 @@
 import { Carousel as SliderLib } from 'antd'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors } from '../../styles/colors'
 import { default as ArrowLeftLib } from './Icons/ArrowLeft'
 import { default as ArrowRightLib } from './Icons/ArrowRight'
 
+const commonIconStyle = css`
+  width: 55px;
+  height: 55px;
+  border: 1px solid ${colors.dark};
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s ease-out border background-color;
+  background-color: ${colors.background};
+
+  &:hover {
+    border: 1px solid ${colors.primary};
+    background-color: ${colors.primary};
+  }
+`
+
 export const Slider = styled(SliderLib)`
-  overflow-y: hidden;
+  overflow: hidden;
 `
 
 export const SliderContainer = styled.div`
-  width: 100%;
-  overflow-y: hidden;
+  width: 96%;
+  overflow: hidden;
   height: 500px;
 `
 
 export const Wrapper = styled.div`
   height: 600px;
   margin: 0 1rem;
+  position: relative;
 `
 
 export const Title = styled.h2`
@@ -33,24 +54,13 @@ export const Controls = styled.div`
   justify-content: center;
 `
 
-export const IconContainer = styled.div`
-  width: 55px;
-  height: 55px;
-  border: 1px solid ${colors.dark};
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.1s ease-out border background-color;
-
-  &:first-child {
-    margin-right: 1rem;
-  }
-
-  &:hover {
-    border: 1px solid ${colors.primary};
-    background-color: ${colors.primary};
-  }
+export const LeftIconContainer = styled.div`
+  ${commonIconStyle}
+  left: 0;
+`
+export const RightIconContainer = styled.div`
+  ${commonIconStyle}
+  right: 0;
 `
 
 export const ArrowLeft = styled(ArrowLeftLib)``

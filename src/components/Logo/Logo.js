@@ -22,9 +22,10 @@ const Logo = () => {
       />
     )
   }
+  console.log(logo)
 
   const LogoText = () => {
-    return <PageTitle>JS</PageTitle>
+    return <PageTitle>{logo.text}</PageTitle>
   }
 
   return <AnchorLink to="/#page-top">{shouldShowImage() ? <LogoImage /> : <LogoText />}</AnchorLink>

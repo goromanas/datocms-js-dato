@@ -2,8 +2,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 export const useSeo = () => {
   const seo = useStaticQuery(
     graphql`
-      {
-        datoCmsSite {
+      query seoQuery {
+        site: datoCmsSite {
+          faviconMetaTags {
+            tags
+          }
           globalSeo {
             siteName
           }

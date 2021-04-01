@@ -7,7 +7,8 @@ import {
   SliderContainer,
   Slider,
   Controls,
-  IconContainer,
+  LeftIconContainer,
+  RightIconContainer,
 } from './Testimonials.style'
 import { useTestimonial } from '../../graphql/useTestimonial'
 import SingleTestimonial from './SingleTestimonial/SingleTestimonial'
@@ -53,15 +54,15 @@ const Testimonials = ({ id }) => {
   }
 
   const IconLeft = () => (
-    <IconContainer onClick={() => handleLeft()}>
+    <LeftIconContainer onClick={() => handleLeft()}>
       <ArrowLeft />
-    </IconContainer>
+    </LeftIconContainer>
   )
 
   const IconRight = () => (
-    <IconContainer onClick={() => handleRight()}>
+    <RightIconContainer onClick={() => handleRight()}>
       <ArrowRight />
-    </IconContainer>
+    </RightIconContainer>
   )
 
   return (

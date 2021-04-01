@@ -7,8 +7,9 @@ export const PageTitle = styled.h1`
   font-family: 'proxima-nova', sans-serif;
   font-size: 1.5rem;
   font-weight: 300;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
   color: ${colors.dark};
+  text-transform: uppercase;
 `
 
 export const Image = styled(Img)``

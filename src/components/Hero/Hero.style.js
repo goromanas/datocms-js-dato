@@ -102,7 +102,7 @@ export const Overlay = styled.div`
   right: 0;
   bottom: 0;
   left: 25%;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 
   ${media.md`
     right: 2rem;

@@ -8,20 +8,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
-import { useSeo } from './graphql/useSeo'
 
-function SEO({ description, meta, title }) {
-  const site = useSeo()
-
+function SEO({ description, meta, title, site }) {
   const metaDescription = description
+
+  const generateTitleTemplate = (title) => {
+    return title ? `${title} | ${site.globalSeo.siteName}` : `${site.globalSeo.siteName}`
+  }
 
   return (
     <Helmet
       htmlAttributes={{
         lang: 'lt',
       }}
-      title={title}
-      titleTemplate={`%s | ${site.datoCmsSite.globalSeo.siteName}`}
+      title={generateTitleTemplate(title)}
       meta={[
         {
           name: `description`,
@@ -73,7 +73,8 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
+  site: PropTypes.object.isRequired,
 }
 
 export default SEO

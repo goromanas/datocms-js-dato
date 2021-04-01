@@ -16,7 +16,7 @@ export default function Index() {
   const { hideTestimonials } = itemsToHide
 
   return (
-    <Layout title="Pagrindinis">
+    <Layout>
       <Hero />
       <Coaching id="apie-koucinga" />
       <About id="apie-mane" />

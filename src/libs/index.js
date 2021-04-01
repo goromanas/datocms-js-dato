@@ -47,7 +47,7 @@ export const getTestimonialtemsLength = (items) => {
       if (length < 5) {
         number = length
       } else {
-        number = 5
+        number = 3
       }
     }
     return number
