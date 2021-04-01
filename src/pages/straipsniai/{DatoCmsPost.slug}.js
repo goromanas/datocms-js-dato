@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import SinglePost from '../../components/Posts/SinglePost/SinglePost'
-import SEO from '../../seo'
 
 export default function Post({ data: { site, post, morePosts } }) {
   return (
@@ -14,7 +13,6 @@ export default function Post({ data: { site, post, morePosts } }) {
         coverImage={post.coverImage}
         date={post.date}
       />
-      <SEO title={post.title} />
     </>
   )
 }
