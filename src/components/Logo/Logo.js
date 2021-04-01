@@ -22,7 +22,6 @@ const Logo = () => {
       />
     )
   }
-  console.log(logo)
 
   const LogoText = () => {
     return <PageTitle>{logo.text}</PageTitle>

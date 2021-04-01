@@ -20,7 +20,6 @@ import { useSeo } from '../graphql/useSeo'
 
 const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader }) => {
   const { site } = useSeo()
-  console.log(site.faviconMetaTags)
   return (
     <ParallaxProvider>
       <HelmetDatoCms favicon={site.faviconMetaTags} />
