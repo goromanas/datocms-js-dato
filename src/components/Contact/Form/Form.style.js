@@ -43,17 +43,17 @@ export const StyledInput = styled(InputLib)`
 
 export const Select = styled(SelectLib)`
   &.custom-select {
-    border: 1px solid #06101a;
     min-width: 220px;
-    height: 48px;
+    height: 50px;
     border-radius: 0;
   }
 
   .ant-select-selector.ant-select-selector {
-    height: 46px;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #06101a;
     border-radius: 0;
   }
 `
