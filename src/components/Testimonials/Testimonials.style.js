@@ -3,13 +3,14 @@ import styled, { css } from 'styled-components'
 import { colors } from '../../styles/colors'
 import { default as ArrowLeftLib } from './Icons/ArrowLeft'
 import { default as ArrowRightLib } from './Icons/ArrowRight'
+import { media } from '../../styles/media'
 
 const commonIconStyle = css`
   width: 55px;
   height: 55px;
   border: 1px solid ${colors.dark};
   position: absolute;
-  top: 30%;
+  top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
   display: flex;
@@ -22,16 +23,27 @@ const commonIconStyle = css`
     border: 1px solid ${colors.primary};
     background-color: ${colors.primary};
   }
+
+  ${media.sm`
+    top: 30%;
+  `}
 `
 
 export const Slider = styled(SliderLib)`
-  overflow: hidden;
+  .slick-slide {
+    padding: 0;
+
+    ${media.lg`
+      padding: 0 2rem;
+      margin: 0;
+    `}
+  }
 `
 
 export const SliderContainer = styled.div`
   width: 96%;
   overflow: hidden;
-  height: 500px;
+  height: 600px;
 `
 
 export const Wrapper = styled.div`

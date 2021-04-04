@@ -4,4 +4,5 @@ export const colors = {
   gray: '#c0c3c5',
   background: '#F8F8F8',
   white: '#fff',
+  quoteColor: '#bfc3c5',
 }

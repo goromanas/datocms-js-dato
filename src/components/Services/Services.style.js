@@ -25,7 +25,8 @@ export const BackgroundImage = styled(BackgroundImageLib)`
   left: 0;
   right: 0;
   height: 671px;
-  background-position: bottom;
+  background-size: cover;
+  background-position: 50% 50%;
 `
 
 export const Title = styled.h2`
