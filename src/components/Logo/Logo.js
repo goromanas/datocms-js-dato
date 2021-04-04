@@ -1,5 +1,5 @@
 import React from 'react'
-import { PageTitle, Image } from './Logo.style'
+import { PageTitle, Image, StyledDot } from './Logo.style'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useLogo } from '../../graphql/useLogo'
 
@@ -24,7 +24,15 @@ const Logo = () => {
   }
 
   const LogoText = () => {
-    return <PageTitle>{logo.text}</PageTitle>
+    if (!logo.text) return
+    const [firstTitle, secondTitle] = logo.text.split('.')
+    return (
+      <PageTitle>
+        {firstTitle}
+        <StyledDot>.</StyledDot>
+        {secondTitle}
+      </PageTitle>
+    )
   }
 
   return <AnchorLink to="/#page-top">{shouldShowImage() ? <LogoImage /> : <LogoText />}</AnchorLink>

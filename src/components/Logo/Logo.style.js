@@ -4,11 +4,20 @@ import Img from 'gatsby-image'
 
 export const PageTitle = styled.h1`
   text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
-  font-family: 'proxima-nova', sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 100;
   letter-spacing: 3px;
   color: ${colors.dark};
+  text-transform: uppercase;
+`
+export const StyledDot = styled.span`
+  text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);
+  font-family: proxima-nova, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: 3px;
+  color: ${colors.primary};
   text-transform: uppercase;
 `
 
