@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components'
-import { colors } from '../../styles/colors'
 import { media } from '../../styles/media'
 import { default as ButtonLib } from '../core/Button/Button'
 
 const commonContentStyle = css`
   font-family: proxima-nova, sans-serif;
   padding: 0 2rem;
+  font-size: ${({ theme }) => theme.font.size};
 
   div {
-    font-size: 1rem;
+    font-size: ${({ theme }) => theme.font.size};
     font-weight: 300;
     letter-spacing: 0.45px;
     line-height: 2rem;
@@ -27,13 +27,13 @@ const commonContentStyle = css`
   }
 
   li {
-    font-size: 1rem;
+    font-size: ${({ theme }) => theme.font.size};
     font-weight: 300;
     margin-left: 1rem;
 
     &::before {
       content: '>';
-      color: ${colors.primary};
+      color: ${({ theme }) => theme.colors.primary};
       font-weight: 500;
       margin-left: -1rem;
       font-size: 1.2rem;
@@ -61,7 +61,7 @@ export const Content = styled.div`
 
 export const Title = styled.h1`
   text-transform: uppercase;
-  color: ${colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: 400;
   letter-spacing: 6px;
   text-align: center;
@@ -84,10 +84,10 @@ export const ExpandableDescription = styled.div`
 `
 export const Button = styled(ButtonLib)`
   font-size: 0.9rem;
-  color: ${colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   margin: 2rem auto;
 
   &:hover {
-    color: ${colors.white};
+    color: ${({ theme }) => theme.colors.white};
   }
 `

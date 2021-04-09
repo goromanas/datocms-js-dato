@@ -15,24 +15,44 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 import TopElement from './Container/TopElement'
 import { HelmetDatoCms } from 'gatsby-source-datocms'
 import { useSeo } from '../graphql/useSeo'
+import { useTheme } from '../graphql/useTheme'
+import { ThemeProvider } from 'styled-components'
+import { formatFontSize } from '../libs'
 
 // import Footer from '../components/Footer/Footer'
 
 const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader }) => {
   const { site } = useSeo()
+  const { theme } = useTheme()
+
+  const localTheme = {
+    colors: {
+      primary: theme.primary.hex,
+      dark: theme.dark.hex,
+      gray: '#c0c3c5',
+      background: theme.background.hex,
+      white: '#fff',
+      quoteColor: '#bfc3c5',
+    },
+    font: {
+      size: formatFontSize(theme.contentFontSizePx),
+    },
+  }
   return (
     <ParallaxProvider>
       <HelmetDatoCms favicon={site.faviconMetaTags} />
-      <GlobalStyle />
-      <TopElement id="page-top" />
-      <Header
-        hideMenu={hideMenu}
-        displayArticlesMenu={displayArticlesMenu}
-        slimHeader={slimHeader}
-      />
-      <main>{children}</main>
-      <Footer />
-      <SEO title={title} site={site} />
+      <ThemeProvider theme={localTheme}>
+        <GlobalStyle />
+        <TopElement id="page-top" />
+        <Header
+          hideMenu={hideMenu}
+          displayArticlesMenu={displayArticlesMenu}
+          slimHeader={slimHeader}
+        />
+        <main>{children}</main>
+        <Footer />
+        <SEO title={title} site={site} />
+      </ThemeProvider>
     </ParallaxProvider>
   )
 }

@@ -62,3 +62,23 @@ export const isMobileDevice = () => {
     return false
   }
 }
+
+export const formatFontSize = (size) => {
+  return `${size / 16}rem`
+}
+
+export const formatMenuItems = (items) => {
+  const pageMenuItems = items.filter(
+    (item) =>
+      item.node.title.toLowerCase() !== 'atsiliepimai' &&
+      item.node.title.toLowerCase() !== 'kontaktai',
+  )
+
+  const anchorMenuItems = items.filter(
+    (item) =>
+      item.node.title.toLowerCase() === 'atsiliepimai' ||
+      item.node.title.toLowerCase() === 'kontaktai',
+  )
+
+  return { pageMenuItems, anchorMenuItems }
+}

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { default as ButtonLib } from '../core/Button/Button'
-import { colors } from '../../styles/colors'
 import { media } from '../../styles/media'
 
 export const Image = styled(Img)`
@@ -50,13 +49,13 @@ export const Title = styled.h1`
 `
 
 export const Subtitle = styled.h2`
-  color: ${colors.white};
+  color: ${({ theme }) => theme.colors.white};
   font-size: 1.1rem;
   font-weight: 100;
   font-family: 'proxima-nova-light', sans-serif;
 
   ${media.md`
-    color: ${colors.primary};
+    color: ${({ theme }) => theme.colors.primary};
     font-size: 1.5rem;
   `}
 `
@@ -85,7 +84,7 @@ export const Button = styled(ButtonLib)`
 export const Description = styled.div`
   margin-top: 2rem;
   font-size: 1.125rem;
-  color: ${colors.white};
+  color: ${({ theme }) => theme.colors.white};
   max-width: 500px;
   font-family: 'proxima-nova';
   font-weight: 300;

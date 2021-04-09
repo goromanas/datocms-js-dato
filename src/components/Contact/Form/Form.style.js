@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Input as InputLib, Select as SelectLib, Checkbox as CheckboxLib } from 'antd'
-import { colors } from '../../../styles/colors'
 import { media } from '../../../styles/media'
 
 const { TextArea: TextAreaLib } = InputLib
@@ -62,7 +61,7 @@ export const Checkbox = styled(CheckboxLib)`
   margin-right: 1rem;
 
   .ant-checkbox-checked .ant-checkbox-inner {
-    background-color: ${colors.primary};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 `
 export const FormContainer = styled.form`

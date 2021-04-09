@@ -16,9 +16,9 @@ export default function Index() {
   const { hideTestimonials } = itemsToHide
 
   return (
-    <Layout>
+    <Layout title="Pagrindinis">
       <Hero />
-      <Coaching id="apie-koucinga" />
+      <Coaching id="koucingas" />
       <About id="apie-mane" />
       <Services id="paslaugos" setTopic={setTopic} />
       {!hideTestimonials && <Testimonials id="atsiliepimai" />}

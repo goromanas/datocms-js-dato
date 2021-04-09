@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
 
 export const Row = styled.div`
   width: 100%;
@@ -11,7 +10,7 @@ export const IconContainer = styled.div`
   margin-bottom: 3rem;
   width: 55px;
   height: 55px;
-  border: 1px solid ${colors.dark};
+  border: 1px solid ${({ theme }) => theme.colors.dark};
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -22,7 +21,7 @@ export const IconContainer = styled.div`
   }
 
   &:hover {
-    border: 1px solid ${colors.primary};
-    background-color: ${colors.primary};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 `

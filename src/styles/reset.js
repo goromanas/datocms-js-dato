@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { colors } from './colors'
 
 export const GlobalStyle = createGlobalStyle`
 @import url('https://use.typekit.net/tnz5lnx.css');
@@ -19,16 +18,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${colors.background};
+    background: ${({ theme }) => theme.colors.background};
     overflow-x: hidden;
-    color: ${colors.dark};
+    color: ${({ theme }) => theme.colors.dark};;
   }
 
   a {
-    color: ${colors.dark};
+    color: ${({ theme }) => theme.colors.dark};;
 
     &:hover {
-      color: ${colors.primary};
+      color: ${({ theme }) => theme.colors.primary};;
       cursor: pointer;
     }
   }

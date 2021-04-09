@@ -14,10 +14,8 @@ export const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  /* height: ${({ height }) => height}; */
-  /* height: 120px; */
   z-index: 20;
-  background: ${colors.background};
+  background: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 6px 18px #0000001a;
   transition: 0.3s ease-out height;
 `

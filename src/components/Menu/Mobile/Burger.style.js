@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
 
 export const StyledBurger = styled.button`
   margin-top: 10px;
@@ -22,7 +21,7 @@ export const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${colors.primary};
+    background: ${({ theme }) => theme.colors.primary};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;

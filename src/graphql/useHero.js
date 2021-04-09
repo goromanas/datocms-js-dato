@@ -7,6 +7,7 @@ export const useHero = () => {
           title
           subtitle
           description
+          overlay
           heroImage {
             url
             fluid(maxWidth: 1100) {

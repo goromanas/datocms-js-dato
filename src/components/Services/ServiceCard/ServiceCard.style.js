@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
 import { media } from '../../../styles/media'
 
 export const Card = styled.div`
@@ -28,7 +27,7 @@ export const Title = styled.h3`
 
 export const Price = styled.div`
   letter-spacing: 6px;
-  color: ${colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 2.5rem;
   font-weight: 350;
   text-align: center;
@@ -71,5 +70,5 @@ export const CTA = styled.div`
 `
 
 export const AdditionalInfo = styled.div`
-  color: ${colors.gray};
+  color: ${({ theme }) => theme.colors.gray};
 `

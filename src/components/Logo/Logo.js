@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageTitle, Image, StyledDot } from './Logo.style'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import { Link } from 'gatsby'
 import { useLogo } from '../../graphql/useLogo'
 
 const Logo = () => {
@@ -35,7 +35,7 @@ const Logo = () => {
     )
   }
 
-  return <AnchorLink to="/#page-top">{shouldShowImage() ? <LogoImage /> : <LogoText />}</AnchorLink>
+  return <Link to="/">{shouldShowImage() ? <LogoImage /> : <LogoText />}</Link>
 }
 
 export default Logo

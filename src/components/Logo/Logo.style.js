@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { colors } from '../../styles/colors'
 import Img from 'gatsby-image'
 
 export const PageTitle = styled.h1`
@@ -8,7 +7,7 @@ export const PageTitle = styled.h1`
   font-size: 1.5rem;
   font-weight: 100;
   letter-spacing: 3px;
-  color: ${colors.dark};
+  color: ${({ theme }) => theme.colors.dark};
   text-transform: uppercase;
 `
 export const StyledDot = styled.span`
@@ -17,7 +16,7 @@ export const StyledDot = styled.span`
   font-size: 1.5rem;
   font-weight: 100;
   letter-spacing: 3px;
-  color: ${colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   text-transform: uppercase;
 `
 

@@ -1,6 +1,5 @@
 import { Carousel as SliderLib } from 'antd'
 import styled, { css } from 'styled-components'
-import { colors } from '../../styles/colors'
 import { default as ArrowLeftLib } from './Icons/ArrowLeft'
 import { default as ArrowRightLib } from './Icons/ArrowRight'
 import { media } from '../../styles/media'
@@ -8,7 +7,7 @@ import { media } from '../../styles/media'
 const commonIconStyle = css`
   width: 55px;
   height: 55px;
-  border: 1px solid ${colors.dark};
+  border: 1px solid ${({ theme }) => theme.colors.dark};
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -17,11 +16,11 @@ const commonIconStyle = css`
   align-items: center;
   justify-content: center;
   transition: 0.1s ease-out border background-color;
-  background-color: ${colors.background};
+  background-color: ${({ theme }) => theme.colors.background};
 
   &:hover {
-    border: 1px solid ${colors.primary};
-    background-color: ${colors.primary};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 
   ${media.sm`

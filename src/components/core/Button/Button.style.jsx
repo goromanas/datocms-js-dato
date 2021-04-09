@@ -1,11 +1,12 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
 import { media } from '../../../styles/media'
 
 export const ButtonWrapper = styled.button`
-  background-color: ${({ type }) => (type === 'outline' ? 'transparent' : colors.primary)};
-  color: ${({ type, color }) => (type === 'outline' || color ? '#fff' : colors.dark)};
-  border: ${({ type }) => (type === 'outline' ? `solid 1px ${colors.primary}` : 'none')};
+  background-color: ${({ type, theme }) =>
+    type === 'outline' ? 'transparent' : theme.colors.primary};
+  color: ${({ type, color, theme }) => (type === 'outline' || color ? '#fff' : theme.colors.dark)};
+  border: ${({ type, theme }) =>
+    type === 'outline' ? `solid 1px ${theme.colors.primary}` : 'none'};
   padding: 0.8rem 1.2rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -19,7 +20,7 @@ export const ButtonWrapper = styled.button`
 
   &:hover {
     filter: brightness(1.1);
-    background-color: ${colors.primary};
+    background-color: ${({ theme }) => theme.colors.primary};
   }
 
   ${media.md`

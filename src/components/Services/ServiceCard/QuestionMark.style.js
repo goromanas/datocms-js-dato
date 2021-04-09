@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
 import { Popover as PopoverLib } from 'antd'
 
 export const Wrapper = styled.div`
@@ -7,14 +6,14 @@ export const Wrapper = styled.div`
   top: 0;
   padding-left: 2px;
   right: 0;
-  color: ${colors.gray};
+  color: ${({ theme }) => theme.colors.gray};
   width: 20px;
   height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  border: 1px solid ${colors.gray};
+  border: 1px solid ${({ theme }) => theme.colors.gray};
   border-radius: 50%;
   cursor: pointer;
   user-select: none;

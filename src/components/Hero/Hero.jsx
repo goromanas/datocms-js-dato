@@ -29,7 +29,7 @@ const Hero = () => {
               objectPosition: '0% 0%',
             }}
           />
-          <Overlay />
+          {hero.overlay && <Overlay />}
         </ImageWrapper>
       </Parallax>
       <Content>

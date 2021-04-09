@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { media } from '../../styles/media'
-import { colors } from '../../styles/colors'
 import Burger from './Mobile/Burger'
+import { Link as LinkLib } from 'gatsby'
 
 export const MenuWrapper = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ export const MobileMenuItem = styled.div`
   font-family: 'proxima-nova-light', sans-serif;
 
   a {
-    color: ${colors.white};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   &:last-child {
@@ -61,7 +61,7 @@ export const MobileWrapper = styled.div`
   top: 50px;
   left: 0;
   width: 100%;
-  background: ${colors.primary};
+  background: ${({ theme }) => theme.colors.primary};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,4 +74,13 @@ export const MobileWrapper = styled.div`
       transform: translateX(110%);
       opacity: 0;
   `}
+`
+
+export const Link = styled(LinkLib)`
+  &.active {
+    color: ${({ theme }) => theme.colors.primary};
+    &__mobile {
+      color: ${({ theme }) => theme.colors.dark};
+    }
+  }
 `

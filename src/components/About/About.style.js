@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { colors } from '../../styles/colors'
 import { media } from '../../styles/media'
 import { default as ContainerLib } from '../../layouts/Container/Container'
 
@@ -19,7 +18,7 @@ export const Container = styled(ContainerLib)`
 
 export const ContentWrapper = styled.div`
   display: flex;
-  background: ${colors.white};
+  background: ${({ theme }) => theme.colors.white};
   padding: 0;
   align-items: center;
   flex-direction: column;
@@ -41,7 +40,7 @@ export const Content = styled.div`
 
 export const Title = styled.h2`
   text-transform: uppercase;
-  color: ${colors.primary};
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: 400;
   letter-spacing: 6px;
   text-align: center;
@@ -52,6 +51,7 @@ export const Description = styled.div`
   padding: 0 1rem;
   p {
     font-family: proxima-nova, sans-serif;
+    font-size: ${({ theme }) => theme.font.size};
     font-weight: 300;
     letter-spacing: 0.45px;
     line-height: 2rem;
@@ -66,7 +66,7 @@ export const Image = styled(Img)`
 `
 
 export const TitleWrapper = styled.div`
-  background: ${colors.white};
+  background: ${({ theme }) => theme.colors.white};
   display: flex;
   width: 100%;
   justify-content: center;

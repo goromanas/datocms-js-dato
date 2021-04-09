@@ -7,13 +7,13 @@ import {
   StyledBurger,
   MainWrapper,
   MobileMenuItem,
+  Link,
 } from './Menu.style'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useHideInformation } from '../../graphql/useHideInformation'
-import { checkWhichPage, generateMenuLink, handleMenuItems } from '../../libs'
-import { Link } from 'gatsby'
+import { formatMenuItems, generateMenuLink, handleMenuItems } from '../../libs'
 
-const Menu = ({ displayArticlesMenu = false }) => {
+const Menu = () => {
   const menuItems = useMenu()
   const { itemsToHide } = useHideInformation()
   const { hideTestimonials, hideArticles } = itemsToHide
@@ -24,12 +24,21 @@ const Menu = ({ displayArticlesMenu = false }) => {
     setMobileMenuOpen((prev) => !prev)
   }
 
+  const { pageMenuItems, anchorMenuItems } = formatMenuItems(items)
+
   const MainMenu = () => {
     return (
       <MainWrapper>
-        {items.map((item) => (
+        {pageMenuItems.map((item) => (
           <MenuItem key={item.node.id}>
-            <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title} </AnchorLink>
+            <Link to={`/${item.node.link}`} activeClassName="active">
+              {item.node.title}
+            </Link>
+          </MenuItem>
+        ))}
+        {anchorMenuItems.map((item) => (
+          <MenuItem key={item.node.id}>
+            <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title}</AnchorLink>
           </MenuItem>
         ))}
       </MainWrapper>
@@ -39,7 +48,14 @@ const Menu = ({ displayArticlesMenu = false }) => {
   const MobileMenu = () => {
     return (
       <MobileWrapper menuOpen={mobileMenuOpen}>
-        {items.map((item) => (
+        {pageMenuItems.map((item) => (
+          <MobileMenuItem key={`${item.node.id}-mobile`} onClick={() => setMobileMenuOpen(false)}>
+            <Link to={`/${item.node.link}`} activeClassName="active__mobile">
+              {item.node.title}{' '}
+            </Link>
+          </MobileMenuItem>
+        ))}
+        {anchorMenuItems.map((item) => (
           <MobileMenuItem key={`${item.node.id}-mobile`} onClick={() => setMobileMenuOpen(false)}>
             <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title} </AnchorLink>
           </MobileMenuItem>
@@ -48,27 +64,10 @@ const Menu = ({ displayArticlesMenu = false }) => {
     )
   }
 
-  const ArticlesMenu = () => {
-    const isArticlesPage = checkWhichPage('straipsniai')
-
-    return (
-      <MainWrapper>
-        {!isArticlesPage && (
-          <MenuItem key="straipsniai">
-            <Link to={`/straipsniai`}>Straipsniai</Link>
-          </MenuItem>
-        )}
-        <MenuItem key="pagrindinis">
-          <Link to={`/`}>Pradžia</Link>
-        </MenuItem>
-      </MainWrapper>
-    )
-  }
-
   return (
     <MenuWrapper>
       <StyledBurger onClick={() => handleClick()} menuOpen={mobileMenuOpen} />
-      {displayArticlesMenu ? <ArticlesMenu /> : <MainMenu />}
+      <MainMenu />
       <MobileMenu />
     </MenuWrapper>
   )
