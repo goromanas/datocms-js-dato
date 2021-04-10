@@ -31,7 +31,7 @@ const Menu = () => {
       <MainWrapper>
         {pageMenuItems.map((item) => (
           <MenuItem key={item.node.id}>
-            <Link to={`/${item.node.link}`} activeClassName="active">
+            <Link to={`/${item.node.link}`} activeClassName="active" fade>
               {item.node.title}
             </Link>
           </MenuItem>
@@ -50,7 +50,7 @@ const Menu = () => {
       <MobileWrapper menuOpen={mobileMenuOpen}>
         {pageMenuItems.map((item) => (
           <MobileMenuItem key={`${item.node.id}-mobile`} onClick={() => setMobileMenuOpen(false)}>
-            <Link to={`/${item.node.link}`} activeClassName="active__mobile">
+            <Link to={`/${item.node.link}`} activeClassName="active__mobile" fade>
               {item.node.title}{' '}
             </Link>
           </MobileMenuItem>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { media } from '../../styles/media'
 import Burger from './Mobile/Burger'
-import { Link as LinkLib } from 'gatsby'
+import { default as LinkLib } from 'gatsby-plugin-transition-link/AniLink'
 
 export const MenuWrapper = styled.div`
   display: flex;

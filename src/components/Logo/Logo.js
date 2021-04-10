@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageTitle, Image, StyledDot } from './Logo.style'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { useLogo } from '../../graphql/useLogo'
 
 const Logo = () => {
@@ -35,7 +35,11 @@ const Logo = () => {
     )
   }
 
-  return <Link to="/">{shouldShowImage() ? <LogoImage /> : <LogoText />}</Link>
+  return (
+    <AniLink to="/" fade>
+      {shouldShowImage() ? <LogoImage /> : <LogoText />}
+    </AniLink>
+  )
 }
 
 export default Logo
