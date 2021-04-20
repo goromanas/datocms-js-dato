@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { colors } from '../../styles/colors'
 
 export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: ${({ height }) => height};
+  height: 50px;
   transition: 0.1s ease-out height;
+  position: relative;
 `
 
 export const HeaderContainer = styled.header`

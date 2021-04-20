@@ -7,7 +7,7 @@ import { useAbout } from '../graphql/useAbout'
 const AboutPage = () => {
   const { about } = useAbout()
   return (
-    <Layout title="Apie mane">
+    <Layout title="Apie mane" seo={about.seo}>
       <PageWrapper marginBottom>
         <About about={about} />
       </PageWrapper>

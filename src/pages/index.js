@@ -16,9 +16,10 @@ export default function Index() {
   const { itemsToHide } = useHideInformation()
   const { hideTestimonials } = itemsToHide
   const { homepage } = useHomepage()
+  console.log(homepage)
 
   return (
-    <Layout title="Pagrindinis">
+    <Layout title="Pagrindinis" home seo={homepage.seo}>
       <Hero hero={homepage.hero[0]} />
       <Coaching id="koucingas" coaching={homepage.coaching[0]} />
       <About id="apie-mane" about={homepage.about[0]} />

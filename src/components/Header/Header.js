@@ -5,7 +5,7 @@ import { Wrapper, HeaderContainer } from './Header.style'
 import Container from '../../layouts/Container/Container'
 import { isMobileDevice } from '../../libs'
 
-const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader }) => {
+const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader, home }) => {
   const [scrolled, setScrolled] = useState(false)
   const handleScroll = () => {
     const offset = window.scrollY
@@ -32,7 +32,7 @@ const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader }) => {
     <HeaderContainer id="header" height={headerHeight}>
       <Container>
         <Wrapper height={headerHeight}>
-          <Logo />
+          <Logo home={home} />
           {!hideMenu && <Menu displayArticlesMenu={displayArticlesMenu} />}
         </Wrapper>
       </Container>

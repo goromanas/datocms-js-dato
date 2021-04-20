@@ -7,7 +7,7 @@ export const useLogo = () => {
           text
           image {
             url
-            fixed(width: 80) {
+            fixed(width: 50) {
               ...GatsbyDatoCmsFixed
             }
           }

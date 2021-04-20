@@ -1,10 +1,12 @@
 import React from 'react'
-import { PageTitle, Image, StyledDot } from './Logo.style'
+import { PageTitle, Image, StyledDot, LogoWrapper } from './Logo.style'
 import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useLogo } from '../../graphql/useLogo'
 
-const Logo = () => {
+const Logo = ({ home }) => {
   const { logo } = useLogo()
+  const element = '/#page-top'
 
   const shouldShowImage = () => {
     return logo.image !== null
@@ -17,11 +19,23 @@ const Logo = () => {
         fixed={logo.image.fixed}
         imgStyle={{
           objectFit: 'contain',
-          maxHeight: '40px',
+          maxHeight: '50px',
         }}
       />
     )
   }
+
+  const RenderLink = () => (
+    <AniLink to="/" fade>
+      {shouldShowImage() ? <LogoImage /> : <LogoText />}
+    </AniLink>
+  )
+
+  const RenderAnchorLink = () => (
+    <AnchorLink to={element} stripHash>
+      {shouldShowImage() ? <LogoImage /> : <LogoText />}
+    </AnchorLink>
+  )
 
   const LogoText = () => {
     if (!logo.text) return
@@ -35,11 +49,7 @@ const Logo = () => {
     )
   }
 
-  return (
-    <AniLink to="/" fade>
-      {shouldShowImage() ? <LogoImage /> : <LogoText />}
-    </AniLink>
-  )
+  return <LogoWrapper>{home ? <RenderAnchorLink /> : <RenderLink />}</LogoWrapper>
 }
 
 export default Logo

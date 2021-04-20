@@ -21,3 +21,10 @@ export const StyledDot = styled.span`
 `
 
 export const Image = styled(Img)``
+
+export const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+`

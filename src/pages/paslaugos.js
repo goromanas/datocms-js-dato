@@ -8,7 +8,7 @@ const ServicesPage = () => {
   console.log(services)
 
   return (
-    <Layout title="Paslaugos">
+    <Layout title="Paslaugos" seo={services.seo}>
       <ServicePageElement services={services} horizontal />
     </Layout>
   )

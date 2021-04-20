@@ -9,6 +9,7 @@ import {
   DescriptionContainer,
   CardContent,
   LeftColumn,
+  RightColumn,
   DescriptionWrapper,
 } from '../ServiceCard/ServiceCard.style'
 import { addCurrency } from '../../../libs'
@@ -17,10 +18,8 @@ import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { StructuredText } from 'react-datocms'
 
 const ServiceCardHorizontal = ({ service }) => {
-  console.log(service)
   return (
     <Card horizontal>
-      <Title>{service.title}</Title>
       <CardContent>
         <LeftColumn>
           <PriceContainer>
@@ -30,15 +29,18 @@ const ServiceCardHorizontal = ({ service }) => {
             <Description dangerouslySetInnerHTML={{ __html: service.shortdescription }} />
           </DescriptionContainer>
         </LeftColumn>
-        <DescriptionWrapper>
-          <StructuredText data={service.description} />
-        </DescriptionWrapper>
+        <RightColumn>
+          <Title horizontal>{service.title}</Title>
+          <DescriptionWrapper>
+            <StructuredText data={service.description} />
+          </DescriptionWrapper>
+          <CTA>
+            <AnchorLink to="/#kontaktai" stripHash>
+              <Button title="Užsisakyti" color="white" />
+            </AnchorLink>
+          </CTA>
+        </RightColumn>
       </CardContent>
-      <CTA>
-        <AnchorLink to="/#kontaktai" stripHash>
-          <Button title="Užsisakyti" color="white" />
-        </AnchorLink>
-      </CTA>
     </Card>
   )
 }

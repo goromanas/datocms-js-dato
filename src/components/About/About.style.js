@@ -6,6 +6,7 @@ import { default as ContainerLib } from '../../layouts/Container/Container'
 export const AboutWrapper = styled.section`
   margin-top: 20vh;
   min-height: 70vh;
+  margin-bottom: 14rem;
 
   ${media.md`
     min-height: 70vh;

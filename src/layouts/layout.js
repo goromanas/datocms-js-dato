@@ -21,7 +21,7 @@ import { formatFontSize } from '../libs'
 
 // import Footer from '../components/Footer/Footer'
 
-const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader }) => {
+const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader, home, seo }) => {
   const { site } = useSeo()
   const { theme } = useTheme()
 
@@ -40,7 +40,7 @@ const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader }) 
   }
   return (
     <ParallaxProvider>
-      <HelmetDatoCms favicon={site.faviconMetaTags} />
+      <HelmetDatoCms favicon={site.faviconMetaTags} seo={seo} />
       <ThemeProvider theme={localTheme}>
         <GlobalStyle />
         <TopElement id="page-top" />
@@ -48,6 +48,7 @@ const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader }) 
           hideMenu={hideMenu}
           displayArticlesMenu={displayArticlesMenu}
           slimHeader={slimHeader}
+          home={home}
         />
         <main>{children}</main>
         <Footer />

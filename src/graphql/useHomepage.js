@@ -45,6 +45,9 @@ export const useHomepage = () => {
               ...GatsbyDatoCmsFluid
             }
           }
+          seo: seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
       }
     `,
