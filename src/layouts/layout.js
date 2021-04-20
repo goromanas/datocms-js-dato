@@ -22,7 +22,7 @@ const Layout = ({ children, hideMenu, displayArticlesMenu, slimHeader, home, seo
   const { site } = useSeo()
   const { theme } = useTheme()
   let localSeo = { ...seo }
-  // console.log())
+
   useEffect(() => {
     if ('tags' in localSeo && !localSeo.tags[0].content.includes(site.globalSeo.siteName)) {
       localSeo.tags[0].content = `${localSeo.tags[0].content} | ${site.globalSeo.siteName}`

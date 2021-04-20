@@ -4,7 +4,6 @@ import ServiceCard from '../ServiceCard/ServiceCard'
 import { CardWrapperHorizontal, ServiceSection, BackgroundImage, Title } from '../Services.style'
 
 const ServicePageElement = ({ id, services }) => {
-  console.log(services)
   return (
     <ServiceSection id={id} horizontal>
       <BackgroundImage fluid={services.backgroundimage.fluid} horizontal>
