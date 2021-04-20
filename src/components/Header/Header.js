@@ -18,6 +18,8 @@ const Header = ({ hideMenu = false, displayArticlesMenu, slimHeader }) => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
+
+    return window.removeEventListener('scroll', handleScroll)
   })
   let headerHeight
   if (slimHeader) {

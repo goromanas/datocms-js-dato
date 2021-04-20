@@ -8,7 +8,7 @@ export const PageTitle = styled.h1`
   font-weight: 100;
   letter-spacing: 3px;
   color: ${({ theme }) => theme.colors.dark};
-  text-transform: uppercase;
+  text-transform: lowercase;
 `
 export const StyledDot = styled.span`
   text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);

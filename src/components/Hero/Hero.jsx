@@ -1,6 +1,5 @@
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React from 'react'
-import { useHero } from '../../graphql/useHero'
 import {
   Image,
   HeroWrapper,
@@ -15,9 +14,7 @@ import {
 } from './Hero.style'
 import { Parallax } from 'react-scroll-parallax'
 
-const Hero = () => {
-  const { hero } = useHero()
-
+const Hero = ({ hero }) => {
   return (
     <HeroWrapper>
       <Parallax className="custom-class" y={[-40, 30]}>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useCoaching } from '../../graphql/useCoaching'
 import {
   CoachingWrapper,
   Content,
@@ -9,8 +8,7 @@ import {
   ExpandableDescription,
 } from './Coaching.style'
 
-const About = ({ id }) => {
-  const { coaching } = useCoaching()
+const Coaching = ({ id, coaching }) => {
   const [expanded, setExpanded] = useState(false)
   const handleExpanded = () => {
     setExpanded((prev) => !prev)
@@ -32,4 +30,4 @@ const About = ({ id }) => {
   )
 }
 
-export default About
+export default Coaching

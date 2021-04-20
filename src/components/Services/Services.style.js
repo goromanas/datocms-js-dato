@@ -16,8 +16,22 @@ export const CardWrapper = styled.div`
   `}
 `
 
+export const CardWrapperHorizontal = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -115px;
+
+  ${media.lg`
+    flex-direction: column;
+    align-items: stretch;
+  `}
+`
+
 export const ServiceSection = styled.section`
-  margin-top: 14.25rem;
+  margin-top: ${({ horizontal }) => (horizontal ? '0px' : '14.25rems')};
 `
 
 export const BackgroundImage = styled(BackgroundImageLib)`
@@ -27,6 +41,7 @@ export const BackgroundImage = styled(BackgroundImageLib)`
   height: 671px;
   background-size: cover;
   background-position: 50% 50%;
+  background-attachment: ${({ horizontal }) => (horizontal ? 'fixed' : 'scroll')};
 `
 
 export const Title = styled.h2`

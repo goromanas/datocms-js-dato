@@ -43,7 +43,12 @@ const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
                 </SocialLink>
               </ContactItem>
             </SocialWrapper>
-            <Form services={services.edges} contact={contact} topic={topic} setTopic={setTopic} />
+            <Form
+              services={services.longServiceBlock}
+              contact={contact}
+              topic={topic}
+              setTopic={setTopic}
+            />
           </ContactFormWrapper>
         </Wrapper>
         {!hideBackToTop && <BackToTop />}

@@ -1,11 +1,15 @@
 import Layout from '../layouts/layout'
 import React from 'react'
-import Services from '../components/Services/Services'
+import { useServices } from '../graphql/useServices'
+import ServicePageElement from '../components/Services/ServicePageElement/ServicePageElement'
 
 const ServicesPage = () => {
+  const { services } = useServices()
+  console.log(services)
+
   return (
     <Layout title="Paslaugos">
-      <Services />
+      <ServicePageElement services={services} horizontal />
     </Layout>
   )
 }

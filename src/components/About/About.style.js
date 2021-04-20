@@ -8,7 +8,7 @@ export const AboutWrapper = styled.section`
   min-height: 70vh;
 
   ${media.md`
-    height: 70vh;
+    min-height: 70vh;
   `}
 `
 

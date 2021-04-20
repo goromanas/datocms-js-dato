@@ -14,7 +14,6 @@ const SinglePost = ({ content, title, coverImage, date }) => {
   if (typeof window !== 'undefined') {
     currentPath = getCurrentPath()
   }
-  const [topic, setTopic] = useState('')
   return (
     <Layout displayArticlesMenu slimHeader>
       <Wrapper>
@@ -39,7 +38,7 @@ const SinglePost = ({ content, title, coverImage, date }) => {
           </PostBody>
         </Container>
       </Wrapper>
-      <Contact hideBackToTop setTopic={setTopic} topic={topic} />
+      <Contact hideBackToTop />
       <BackToTop element={`${currentPath}#page-top`} />
     </Layout>
   )

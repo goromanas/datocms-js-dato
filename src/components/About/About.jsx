@@ -1,5 +1,4 @@
 import React from 'react'
-import { useAbout } from '../../graphql/useAbout'
 import {
   AboutWrapper,
   Title,
@@ -11,8 +10,7 @@ import {
   Container,
 } from './About.style'
 
-const About = ({ id }) => {
-  const { about } = useAbout()
+const About = ({ id, about }) => {
   return (
     <AboutWrapper id={id}>
       <Container>

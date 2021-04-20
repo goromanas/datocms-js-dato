@@ -8,6 +8,8 @@ import Button from '../../core/Button/Button'
 const { Option } = Select
 
 const Form = ({ className, services, contact, topic, setTopic }) => {
+  let serviceOptions = [...services]
+  if (serviceOptions.length < 4) serviceOptions.push({ title: 'Kita', id: 'Kita' })
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -129,9 +131,9 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               id="subject"
               type="subject"
             >
-              {services.map((service) => (
-                <Option value={service.node.title} key={service.node.id}>
-                  {service.node.title}
+              {serviceOptions.map((service) => (
+                <Option value={service.title} key={service.id}>
+                  {service.title}
                 </Option>
               ))}
             </Select>

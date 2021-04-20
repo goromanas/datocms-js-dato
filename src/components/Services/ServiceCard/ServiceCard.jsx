@@ -13,11 +13,12 @@ import { addCurrency } from '../../../libs'
 import Button from '../../core/Button/Button'
 import QuestionMark from './QuestionMark'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import ServiceCardHorizontal from '../ServicePageElement/ServiceCardHorizontal'
 
-const ServiceCard = ({ service, tooltip, setTopic, additionalInfo }) => {
+const ServiceCard = ({ service, tooltip, setTopic, additionalInfo, horizontal }) => {
   const showAdditionalInfo = additionalInfo !== '' && additionalInfo !== null
 
-  return (
+  const VerticalLayout = () => (
     <Card>
       <Title>{service.title}</Title>
       <PriceContainer>
@@ -34,6 +35,20 @@ const ServiceCard = ({ service, tooltip, setTopic, additionalInfo }) => {
         </AnchorLink>
       </CTA>
     </Card>
+  )
+
+  return (
+    <>
+      {horizontal ? (
+        <ServiceCardHorizontal
+          service={service}
+          tooltip={tooltip}
+          additionalInfo={additionalInfo}
+        />
+      ) : (
+        <VerticalLayout />
+      )}
+    </>
   )
 }
 

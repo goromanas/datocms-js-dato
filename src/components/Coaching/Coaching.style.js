@@ -6,6 +6,7 @@ const commonContentStyle = css`
   font-family: proxima-nova, sans-serif;
   padding: 0 2rem;
   font-size: ${({ theme }) => theme.font.size};
+  text-align: justify;
 
   div {
     font-size: ${({ theme }) => theme.font.size};
@@ -30,6 +31,7 @@ const commonContentStyle = css`
     font-size: ${({ theme }) => theme.font.size};
     font-weight: 300;
     margin-left: 1rem;
+    text-align: left;
 
     &::before {
       content: '>';
@@ -57,6 +59,12 @@ export const CoachingWrapper = styled.section`
 export const Content = styled.div`
   max-width: 550px;
   padding: 2.625rem 0 1rem;
+`
+
+export const PageContent = styled.div`
+  max-width: 600px;
+  margin: 8rem auto 6rem;
+  font-size: 1.2rem;
 `
 
 export const Title = styled.h1`
@@ -90,4 +98,13 @@ export const Button = styled(ButtonLib)`
   &:hover {
     color: ${({ theme }) => theme.colors.white};
   }
+`
+
+export const SingleTitle = styled.h1`
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.primary};
+  font-weight: 400;
+  letter-spacing: 6px;
+  text-align: center;
+  margin: 3rem 0 1.75rem;
 `

@@ -3,30 +3,24 @@ export const useServices = () => {
   const services = useStaticQuery(
     graphql`
       query serviceQuery {
-        services: allDatoCmsService(sort: { fields: [position], order: ASC }) {
-          edges {
-            node {
-              id
-              title
-              price
-              description
-              additionalInfo
-              tooltip
+        services: datoCmsService {
+          title
+          backgroundimage {
+            url
+            fluid(maxWidth: 1100) {
+              ...GatsbyDatoCmsFluid
             }
           }
-        }
-        section: allDatoCmsSection {
-          edges {
-            node {
-              title
-              tooltip
-              background {
-                url
-                fluid(maxWidth: 1100) {
-                  ...GatsbyDatoCmsFluid
-                }
-              }
+          longServiceBlock {
+            title
+            price
+            id
+            description {
+              blocks
+              links
+              value
             }
+            shortdescription
           }
         }
       }

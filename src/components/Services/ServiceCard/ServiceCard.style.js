@@ -1,5 +1,21 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { media } from '../../../styles/media'
+
+const horizontalCard = css`
+  width: 100%;
+  height: 400px;
+  box-shadow: 0px 6px 18px #0000001a;
+  padding: 2.75rem 3.125rem;
+  background: #fff;
+  margin-bottom: 2rem;
+`
+export const CardContent = styled.div`
+  display: grid;
+  grid-template-columns: 30% 70%;
+  text-align: center;
+  margin-bottom: 2rem;
+  height: 200px;
+`
 
 export const Card = styled.div`
   width: 350px;
@@ -13,8 +29,10 @@ export const Card = styled.div`
   margin-bottom: 2rem;
 
   ${media.lg`
-    margin-bottom: 0;
+    margin-bottom: ${({ horizontal }) => (horizontal ? '2rem' : '0')};
   `}
+
+  ${({ horizontal }) => horizontal && horizontalCard}
 `
 
 export const Title = styled.h3`
@@ -65,10 +83,26 @@ export const Description = styled.div`
 
 export const CTA = styled.div`
   display: flex;
+  margin-top: 2rem;
+  position: relative;
+  top: 2rem;
   flex-direction: column-reverse;
   align-items: center;
 `
 
 export const AdditionalInfo = styled.div`
-  color: ${({ theme }) => theme.colors.gray};
+  color: ${({ theme, bigger }) => (bigger ? theme.colors.dark : theme.colors.gray)};
+  font-size: ${({ bigger }) => (bigger ? '1.06rem' : 'initial')};
+  text-align: ${({ bigger }) => (bigger ? 'left' : 'center')};
+`
+export const LeftColumn = styled.div`
+  position: relative;
+  top: -2rem;
+  border-right: 1px solid ${({ theme }) => theme.colors.primary};
+  margin-right: 2rem;
+  padding-right: 2rem;
+`
+export const DescriptionWrapper = styled.div`
+  font-size: 1.05rem;
+  text-align: left;
 `
