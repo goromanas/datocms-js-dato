@@ -4,6 +4,7 @@ import ServiceCard from '../ServiceCard/ServiceCard'
 import { CardWrapperHorizontal, ServiceSection, BackgroundImage, Title } from '../Services.style'
 
 const ServicePageElement = ({ id, services }) => {
+  console.log(services)
   return (
     <ServiceSection id={id} horizontal>
       <BackgroundImage fluid={services.backgroundimage.fluid} horizontal>
@@ -14,7 +15,7 @@ const ServicePageElement = ({ id, services }) => {
         <CardWrapperHorizontal>
           {services.longServiceBlock.map((service) => (
             <ServiceCard
-              key={service.originalId}
+              key={service.id}
               service={service}
               tooltip={service.tooltip}
               additionalInfo={service.additionalInfo}

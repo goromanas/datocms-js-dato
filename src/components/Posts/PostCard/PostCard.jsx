@@ -6,7 +6,7 @@ import { PostCardContainer } from './PostCard.style'
 const PostCard = ({ post }) => {
   return (
     <PostCardContainer>
-      <Link to={`${post.slug}`} fade>
+      <Link to={`${post.slug}`}>
         <Img fluid={post.coverImage.small} />
         <h2>{post.title}</h2>
       </Link>

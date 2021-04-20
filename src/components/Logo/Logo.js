@@ -25,11 +25,7 @@ const Logo = ({ home }) => {
     )
   }
 
-  const RenderLink = () => (
-    <Link to="/" fade>
-      {shouldShowImage() ? <LogoImage /> : <LogoText />}
-    </Link>
-  )
+  const RenderLink = () => <Link to="/">{shouldShowImage() ? <LogoImage /> : <LogoText />}</Link>
 
   const RenderAnchorLink = () => (
     <AnchorLink to={element} stripHash>
