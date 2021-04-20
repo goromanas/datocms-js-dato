@@ -5,7 +5,6 @@ import ServicePageElement from '../components/Services/ServicePageElement/Servic
 
 const ServicesPage = () => {
   const { services } = useServices()
-  console.log(services)
 
   return (
     <Layout title="Paslaugos" seo={services.seo}>

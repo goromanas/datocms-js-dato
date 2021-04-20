@@ -13,7 +13,7 @@ import { useSeo } from './graphql/useSeo'
 function SEO({ description, meta, title }) {
   const { site } = useSeo()
 
-  const metaDescription = description
+  // const metaDescription = description
 
   return (
     <Helmet

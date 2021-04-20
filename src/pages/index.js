@@ -16,7 +16,6 @@ export default function Index() {
   const { itemsToHide } = useHideInformation()
   const { hideTestimonials } = itemsToHide
   const { homepage } = useHomepage()
-  console.log(homepage)
 
   return (
     <Layout title="Pagrindinis" home seo={homepage.seo}>

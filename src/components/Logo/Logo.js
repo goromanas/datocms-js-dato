@@ -1,6 +1,6 @@
 import React from 'react'
 import { PageTitle, Image, StyledDot, LogoWrapper } from './Logo.style'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { Link } from 'gatsby'
 import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import { useLogo } from '../../graphql/useLogo'
 
@@ -26,9 +26,9 @@ const Logo = ({ home }) => {
   }
 
   const RenderLink = () => (
-    <AniLink to="/" fade>
+    <Link to="/" fade>
       {shouldShowImage() ? <LogoImage /> : <LogoText />}
-    </AniLink>
+    </Link>
   )
 
   const RenderAnchorLink = () => (

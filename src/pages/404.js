@@ -1,5 +1,5 @@
 import * as React from 'react'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { Link } from 'gatsby'
 
 // styles
 const pageStyles = {
@@ -45,9 +45,9 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <AniLink to="/" fade>
+        <Link to="/" fade>
           Go home
-        </AniLink>
+        </Link>
         .
       </p>
     </main>

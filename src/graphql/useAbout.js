@@ -11,6 +11,9 @@ export const useAbout = () => {
               ...GatsbyDatoCmsFixed
             }
           }
+          seo: seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
         }
       }
     `,

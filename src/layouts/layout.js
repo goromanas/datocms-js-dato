@@ -5,10 +5,9 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Header from '../components/Header/Header'
-import SEO from '../seo'
 import Footer from '../components/Footer/Footer'
 import { GlobalStyle } from '../styles/reset'
 import { ParallaxProvider } from 'react-scroll-parallax'
@@ -19,11 +18,21 @@ import { useTheme } from '../graphql/useTheme'
 import { ThemeProvider } from 'styled-components'
 import { formatFontSize } from '../libs'
 
-// import Footer from '../components/Footer/Footer'
-
-const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader, home, seo }) => {
+const Layout = ({ children, hideMenu, displayArticlesMenu, slimHeader, home, seo }) => {
   const { site } = useSeo()
   const { theme } = useTheme()
+  let localSeo = { ...seo }
+  useEffect(() => {
+    if ('tags' in localSeo) {
+      localSeo.tags[0].content = `${localSeo.tags[0].content} | ${site.globalSeo.siteName}`
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  if (!localSeo?.tags) {
+    const title = `${site.globalSeo.siteName}`
+    localSeo = { tags: [{ content: title, tagName: 'title' }] }
+  }
 
   const localTheme = {
     colors: {
@@ -40,7 +49,7 @@ const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader, ho
   }
   return (
     <ParallaxProvider>
-      <HelmetDatoCms favicon={site.faviconMetaTags} seo={seo} />
+      <HelmetDatoCms favicon={site.faviconMetaTags} seo={localSeo} />
       <ThemeProvider theme={localTheme}>
         <GlobalStyle />
         <TopElement id="page-top" />
@@ -52,7 +61,7 @@ const Layout = ({ children, title, hideMenu, displayArticlesMenu, slimHeader, ho
         />
         <main>{children}</main>
         <Footer />
-        <SEO title={title} site={site} />
+        {/* <SEO title={title} site={site} /> */}
       </ThemeProvider>
     </ParallaxProvider>
   )
