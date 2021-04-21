@@ -31,7 +31,7 @@ export const CardWrapperHorizontal = styled.div`
 `
 
 export const ServiceSection = styled.section`
-  margin-top: ${({ horizontal }) => (horizontal ? '0px' : '14.25rems')};
+  margin-top: ${({ horizontal }) => (horizontal ? '0px' : '14.25rem')};
 `
 
 export const BackgroundImage = styled(BackgroundImageLib)`

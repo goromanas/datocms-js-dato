@@ -9,7 +9,7 @@ export const StyledPageWrapper = styled.div`
   min-height: 95vh;
 
   ${media.md`
-    max-width: 1140px;
+    /* max-width: 1140px; */
     padding: 0;
-  `}
+  `};
 `

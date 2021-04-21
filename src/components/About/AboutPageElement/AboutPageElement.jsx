@@ -1,0 +1,73 @@
+import React from 'react'
+import { StructuredText } from 'react-datocms'
+import {
+  AboutWrapper,
+  Title,
+  Description,
+  Image,
+  ContentWrapper,
+  Content,
+  TitleWrapper,
+  Container,
+  Intro,
+  IntroContent,
+} from './AboutPageElement.style'
+import Img from 'gatsby-image'
+
+const AboutPageElement = ({ id, about }) => {
+  return (
+    <AboutWrapper id={id} dark>
+      <Container>
+        <TitleWrapper>
+          <Title>{about.title}</Title>
+        </TitleWrapper>
+        <ContentWrapper>
+          <Intro>
+            <Image
+              fixed={about.image.fixed}
+              imgStyle={{
+                objectFit: 'contain',
+              }}
+            />
+            <IntroContent>
+              <StructuredText
+                data={about.excerpt}
+                renderBlock={({ record }) => {
+                  if (record.__typename === 'DatoCmsImageBlock') {
+                    return <Img fluid={record.image.fluid} />
+                  }
+
+                  return (
+                    <>
+                      <p>Don't know how to render a block!</p>
+                      <pre>{JSON.stringify(record, null, 2)}</pre>
+                    </>
+                  )
+                }}
+              />
+            </IntroContent>
+          </Intro>
+        </ContentWrapper>
+        <Description>
+          <StructuredText
+            data={about.description}
+            renderBlock={({ record }) => {
+              if (record.__typename === 'DatoCmsImageBlock') {
+                return <Img fluid={record.image.fluid} />
+              }
+
+              return (
+                <>
+                  <p>Don't know how to render a block!</p>
+                  <pre>{JSON.stringify(record, null, 2)}</pre>
+                </>
+              )
+            }}
+          />
+        </Description>
+      </Container>
+    </AboutWrapper>
+  )
+}
+
+export default AboutPageElement
