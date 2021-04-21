@@ -5,11 +5,18 @@ import { message, Form as AntForm, Row, Col } from 'antd'
 import { TextArea, ButtonWrapper, Input, Select, Checkbox, FormContainer } from './Form.style'
 import Button from '../../core/Button/Button'
 
-const { Option } = Select
+// const { Option } = Select
 
 const Form = ({ className, services, contact, topic, setTopic }) => {
   let serviceOptions = [...services]
   if (serviceOptions.length < 4) serviceOptions.push({ title: 'Kita', id: 'Kita' })
+  serviceOptions = serviceOptions.map((item) => {
+    return {
+      label: item.title,
+      value: item.title,
+    }
+  })
+  console.log(serviceOptions)
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
@@ -127,15 +134,16 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               className="custom-select"
               value={topic || null}
               onSelect={(e) => setTopic(e)}
-              name="subject"
+              name="subject[]"
               id="subject"
               type="subject"
+              options={serviceOptions}
             >
-              {serviceOptions.map((service) => (
+              {/* {serviceOptions.map((service) => (
                 <Option value={service.title} key={service.id}>
                   {service.title}
                 </Option>
-              ))}
+              ))} */}
             </Select>
           </AntForm.Item>
         </Col>

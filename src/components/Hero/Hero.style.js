@@ -22,7 +22,7 @@ export const HeroWrapper = styled.section`
 `
 export const Content = styled.div`
   position: absolute;
-  top: 55%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -30,6 +30,7 @@ export const Content = styled.div`
 
   ${media.md`
     left: 50%;
+    top: 55%;
     transform: translate(0, -50%);
   `}
 `
@@ -100,11 +101,13 @@ export const Overlay = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  left: 25%;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  left: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
 
   ${media.md`
     right: 2rem;
+    left: 25%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
   `}
 `
 

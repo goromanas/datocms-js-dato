@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 const CoachingContent = ({ coaching }) => {
   return (
-    <PageContent>
+    <PageContent extended>
       <SingleTitle>{coaching.title}</SingleTitle>
       <StructuredText
         data={coaching.content}

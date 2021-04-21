@@ -44,9 +44,10 @@ const Menu = () => {
       </MainWrapper>
     )
   }
-
-  const MobileMenu = () => {
-    return (
+  return (
+    <MenuWrapper>
+      <StyledBurger onClick={() => handleClick()} menuOpen={mobileMenuOpen} />
+      <MainMenu />
       <MobileWrapper menuOpen={mobileMenuOpen}>
         {pageMenuItems.map((item) => (
           <MobileMenuItem key={`${item.node.id}-mobile`} onClick={() => setMobileMenuOpen(false)}>
@@ -61,14 +62,6 @@ const Menu = () => {
           </MobileMenuItem>
         ))}
       </MobileWrapper>
-    )
-  }
-
-  return (
-    <MenuWrapper>
-      <StyledBurger onClick={() => handleClick()} menuOpen={mobileMenuOpen} />
-      <MainMenu />
-      <MobileMenu />
     </MenuWrapper>
   )
 }

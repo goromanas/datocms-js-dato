@@ -3,12 +3,18 @@ import { media } from '../../../styles/media'
 
 const horizontalCard = css`
   width: 100%;
-  min-height: 400px;
-  height: initial;
+  min-height: 100%;
+  height: auto;
   box-shadow: 0px 6px 18px #0000001a;
   padding: 2.75rem 3.125rem;
   background: #fff;
   margin-bottom: 2rem;
+
+  ${media.lg`
+    min-height: 400px;
+    height: initial;
+    margin-bottom: ${({ horizontal }) => (horizontal ? '2rem' : '0')};
+  `}
 `
 export const CardContent = styled.div`
   display: flex;
@@ -16,11 +22,12 @@ export const CardContent = styled.div`
   padding: 2rem 0;
   text-align: center;
   margin-bottom: 2rem;
-  height: 200px;
+  height: auto;
 
   ${media.md`
     display: grid;
     grid-template-columns: 30% 70%;
+    height: 200px;
   `}
 `
 
@@ -91,7 +98,7 @@ export const Description = styled.div`
 
 export const CTA = styled.div`
   display: flex;
-  margin-top: 2rem;
+  margin: 2rem 0;
   position: relative;
   top: 2rem;
   flex-direction: column-reverse;
@@ -104,8 +111,15 @@ export const AdditionalInfo = styled.div`
   text-align: ${({ bigger }) => (bigger ? 'left' : 'center')};
 `
 export const LeftColumn = styled.div`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+
   ${media.md`
+    border: 0;
     border-right: 1px solid ${({ theme }) => theme.colors.primary};
+    margin: 0;
+    padding: 0;
     margin-right: 2rem;
     padding-right: 2rem;
   `}

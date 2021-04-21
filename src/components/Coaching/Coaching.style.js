@@ -62,7 +62,7 @@ export const Content = styled.div`
 `
 
 export const PageContent = styled.div`
-  max-width: 600px;
+  max-width: ${({ extended }) => (extended ? '800px' : '600px')};
   margin: 8rem auto 6rem;
   font-size: 1.2rem;
 `

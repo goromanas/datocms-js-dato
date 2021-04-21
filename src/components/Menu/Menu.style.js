@@ -59,16 +59,16 @@ export const MobileWrapper = styled.div`
   display: block;
   position: absolute;
   top: 50px;
-  left: 0;
-  width: 100%;
+  left: -1rem;
+  width: calc(100% + 2rem);
   background: ${({ theme }) => theme.colors.primary};
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: ${({ menuOpen }) => (menuOpen ? '' : 'translateX(110%)')};
+  transform: ${({ menuOpen }) => (menuOpen ? 'translateX(0%)' : 'translateX(-20%)')};
   opacity: ${({ menuOpen }) => (menuOpen ? '1 ' : '0')};
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    opacity 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 
   ${media.md`
       transform: translateX(110%);

@@ -13,6 +13,7 @@ import {
   ImageWrapper,
 } from './Hero.style'
 import { Parallax } from 'react-scroll-parallax'
+import { Link } from 'gatsby'
 
 const Hero = ({ hero }) => {
   return (
@@ -34,9 +35,9 @@ const Hero = ({ hero }) => {
         <Subtitle>{hero.subtitle}</Subtitle>
         <Description>{hero.description}</Description>
         <CTA>
-          <AnchorLink to="/#paslaugos" stripHash>
+          <Link to="/paslaugos">
             <Button title="Paslaugos" />
-          </AnchorLink>
+          </Link>
           <AnchorLink to="/#kontaktai" stripHash>
             <Button title="Susisiekite" type="outline" />
           </AnchorLink>
