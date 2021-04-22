@@ -34,8 +34,13 @@ export const ContentWrapper = styled.div`
   `}
 `
 export const Intro = styled.div`
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  flex-direction: column-reverse;
+
+  ${media.md`
+    display: grid;
+    grid-template-columns: 50% 50%;
+  `}
 `
 
 export const IntroContent = styled.div`
@@ -65,7 +70,7 @@ export const Title = styled.h2`
 `
 
 export const Description = styled.div`
-  padding: 0 5rem;
+  padding: 0 1rem 2rem;
   p {
     font-family: proxima-nova, sans-serif;
     font-size: ${({ theme }) => theme.font.size};
@@ -78,11 +83,18 @@ export const Description = styled.div`
   strong {
     font-weight: 500;
   }
+
+  ${media.md`
+    padding: 0 5rem 2rem;
+  `}
 `
 
 export const Image = styled(Img)`
+  margin-top: 4rem;
+
   ${media.md`
     flex: 1;
+    margin: 0;
   `}
 `
 
@@ -92,4 +104,26 @@ export const TitleWrapper = styled.div`
   width: 100%;
   justify-content: center;
   padding-top: 2rem;
+`
+export const Row = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:first-child {
+    margin-bottom: 2rem;
+  }
+
+  ${media.md`
+    display: grid;
+    grid-template-columns: 10% 90%;
+  `}
+`
+
+export const Icon = styled(Img)`
+  margin: 2rem 0;
+
+  ${media.md`
+    margin-top: 0.5rem 0 0 0;
+  `}
 `

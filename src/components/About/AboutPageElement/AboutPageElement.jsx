@@ -6,15 +6,17 @@ import {
   Description,
   Image,
   ContentWrapper,
-  Content,
+  Row,
   TitleWrapper,
   Container,
   Intro,
   IntroContent,
+  Icon,
 } from './AboutPageElement.style'
 import Img from 'gatsby-image'
 
 const AboutPageElement = ({ id, about }) => {
+  console.log(about)
   return (
     <AboutWrapper id={id} dark>
       <Container>
@@ -30,21 +32,12 @@ const AboutPageElement = ({ id, about }) => {
               }}
             />
             <IntroContent>
-              <StructuredText
-                data={about.excerpt}
-                renderBlock={({ record }) => {
-                  if (record.__typename === 'DatoCmsImageBlock') {
-                    return <Img fluid={record.image.fluid} />
-                  }
-
-                  return (
-                    <>
-                      <p>Don't know how to render a block!</p>
-                      <pre>{JSON.stringify(record, null, 2)}</pre>
-                    </>
-                  )
-                }}
-              />
+              {about.aboutIntro.map((item) => (
+                <Row>
+                  <Icon fixed={item.icon.fixed} />
+                  <div>{item.line}</div>
+                </Row>
+              ))}
             </IntroContent>
           </Intro>
         </ContentWrapper>
