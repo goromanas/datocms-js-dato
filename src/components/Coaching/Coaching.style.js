@@ -6,7 +6,6 @@ const commonContentStyle = css`
   font-family: proxima-nova, sans-serif;
   padding: 0 2rem;
   font-size: ${({ theme }) => theme.font.size};
-  text-align: justify;
 
   div {
     font-size: ${({ theme }) => theme.font.size};
@@ -65,6 +64,12 @@ export const PageContent = styled.div`
   max-width: ${({ extended }) => (extended ? '800px' : '600px')};
   margin: 8rem auto 6rem;
   font-size: 1.2rem;
+
+  p {
+    ${media.md`
+    text-align: justify;
+  `}
+  }
 `
 
 export const Title = styled.h1`

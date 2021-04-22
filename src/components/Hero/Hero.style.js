@@ -22,7 +22,7 @@ export const HeroWrapper = styled.section`
 `
 export const Content = styled.div`
   position: absolute;
-  top: 70%;
+  top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -62,13 +62,14 @@ export const Subtitle = styled.h2`
 `
 
 export const CTA = styled.div`
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: row;
   align-items: center;
 
   ${media.md`
     flex-direction: row;
+    margin-top: 4rem;
   `}
 `
 

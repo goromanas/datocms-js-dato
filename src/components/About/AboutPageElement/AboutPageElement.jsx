@@ -12,6 +12,7 @@ import {
   Intro,
   IntroContent,
   Icon,
+  IconWrapper,
 } from './AboutPageElement.style'
 import Img from 'gatsby-image'
 
@@ -33,7 +34,11 @@ const AboutPageElement = ({ id, about }) => {
             <IntroContent>
               {about.aboutIntro.map((item) => (
                 <Row key={item.id}>
-                  <Icon fixed={item.icon.fixed} />
+                  {item.icon !== null && (
+                    <IconWrapper>
+                      <Icon fixed={item.icon.fixed} />
+                    </IconWrapper>
+                  )}
                   <div>{item.line}</div>
                 </Row>
               ))}

@@ -7,10 +7,12 @@ export const AboutWrapper = styled.section`
   padding-top: 6rem;
   min-height: 70vh;
   padding-bottom: 4rem;
+
   /* background: ${({ theme }) => theme.colors.primary}; */
 
   ${media.md`
     min-height: 70vh;
+    text-align: justify;
   `}
 `
 
@@ -70,7 +72,7 @@ export const Title = styled.h2`
 `
 
 export const Description = styled.div`
-  padding: 0 1rem 2rem;
+  padding: 0 0.2rem 2rem;
   p {
     font-family: proxima-nova, sans-serif;
     font-size: ${({ theme }) => theme.font.size};
@@ -115,13 +117,20 @@ export const Row = styled.div`
   }
 
   ${media.md`
-    display: grid;
+    display: flex;
     grid-template-columns: 10% 90%;
+  `}
+`
+export const IconWrapper = styled.div`
+  display: block;
+
+  ${media.md`
+    display: none;
   `}
 `
 
 export const Icon = styled(Img)`
-  margin: 2rem 0;
+  margin: 1rem 0;
 
   ${media.md`
     margin-top: 0.5rem 0 0 0;
