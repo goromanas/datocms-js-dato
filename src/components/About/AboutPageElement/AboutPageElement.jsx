@@ -16,7 +16,6 @@ import {
 import Img from 'gatsby-image'
 
 const AboutPageElement = ({ id, about }) => {
-  console.log(about)
   return (
     <AboutWrapper id={id} dark>
       <Container>

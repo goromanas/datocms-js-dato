@@ -16,7 +16,6 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
       value: item.title,
     }
   })
-  console.log(serviceOptions)
   function encode(data) {
     return Object.keys(data)
       .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
