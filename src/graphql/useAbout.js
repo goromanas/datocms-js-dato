@@ -7,6 +7,7 @@ export const useAbout = () => {
           title
           aboutIntro {
             line
+            id
             icon {
               fixed(width: 30) {
                 ...GatsbyDatoCmsFixed

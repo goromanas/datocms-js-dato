@@ -32,7 +32,7 @@ const AboutPageElement = ({ id, about }) => {
             />
             <IntroContent>
               {about.aboutIntro.map((item) => (
-                <Row>
+                <Row key={item.id}>
                   <Icon fixed={item.icon.fixed} />
                   <div>{item.line}</div>
                 </Row>
