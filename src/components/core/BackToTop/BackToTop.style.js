@@ -8,7 +8,6 @@ export const Row = styled.div`
   padding: 4rem 0;
 `
 export const IconContainer = styled.div`
-  margin-bottom: 3rem;
   width: 55px;
   height: 55px;
   border: 1px solid ${({ theme }) => theme.colors.dark};
@@ -16,10 +15,6 @@ export const IconContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &:first-child {
-    margin-right: 1rem;
-  }
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.colors.primary};
