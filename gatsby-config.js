@@ -5,7 +5,12 @@ module.exports = {
     title: 'JS Couching',
   },
   plugins: [
-    'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+          displayName: false
+      },
+    },
     'gatsby-plugin-antd',
     {
       resolve: 'gatsby-source-datocms',
