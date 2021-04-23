@@ -6,6 +6,7 @@ export const useHideInformation = () => {
         itemsToHide: datoCmsHideInformation {
           hideArticles
           hideTestimonials
+          siteOnline
         }
       }
     `,

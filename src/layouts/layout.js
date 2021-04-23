@@ -17,10 +17,14 @@ import { useSeo } from '../graphql/useSeo'
 import { useTheme } from '../graphql/useTheme'
 import { ThemeProvider } from 'styled-components'
 import { formatFontSize } from '../libs'
+import { useHideInformation } from '../graphql/useHideInformation'
+import SiteOffline from '../components/SiteOffline/SiteOffline'
 
 const Layout = ({ children, hideMenu, displayArticlesMenu, slimHeader, home, seo }) => {
   const { site } = useSeo()
   const { theme } = useTheme()
+  const { itemsToHide } = useHideInformation()
+  const { siteOnline } = itemsToHide
   let localSeo = { ...seo }
 
   useEffect(() => {
@@ -48,6 +52,15 @@ const Layout = ({ children, hideMenu, displayArticlesMenu, slimHeader, home, seo
       size: formatFontSize(theme.contentFontSizePx),
     },
   }
+
+  if (!siteOnline)
+    return (
+      <ThemeProvider theme={localTheme}>
+        <GlobalStyle />
+        <SiteOffline />
+      </ThemeProvider>
+    )
+
   return (
     <ParallaxProvider>
       <HelmetDatoCms favicon={site.faviconMetaTags} seo={localSeo} />
