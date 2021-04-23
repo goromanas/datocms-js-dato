@@ -1,53 +1,52 @@
-import * as React from 'react'
+import React from 'react'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
+import Layout from '../layouts/layout'
+import { use404 } from '../graphql/use404'
+import Img from 'gatsby-image'
+import Container from '../layouts/Container/Container'
+import Button from '../components/core/Button/Button'
 
-// styles
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+const StyledContainer = styled(Container)`
+  height: 83.9vh;
+  max-height: 100%;
+  margin-top: 6rem;
+  max-width: 30vw;
+  text-align: center;
+`
+const StyledButton = styled(Button)`
+  padding: 0.8rem 2rem;
+  width: 300px;
+  color: ${({ theme }) => theme.colors.white};
+  margin: 0 auto;
+`
+const Title = styled.h1`
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 1.5rem;
+  white-space: nowrap;
+`
 
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-}
+const Content = styled.div`
+  margin: 2rem 0;
+  font-size: 1.2rem;
+`
 
-// markup
 const NotFoundPage = () => {
+  const { data } = use404()
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{' '}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{' '}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === 'development' ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <Layout title={data.title}>
+      <StyledContainer>
+        <Title>{data.title}</Title>
+        <Img fluid={data.image.fluid} />
+
+        <Content>{data.content}</Content>
+        <Link to="/">
+          <StyledButton title={data.link} />
+        </Link>
+      </StyledContainer>
+    </Layout>
   )
 }
 

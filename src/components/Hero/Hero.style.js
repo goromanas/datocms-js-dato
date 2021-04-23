@@ -36,7 +36,7 @@ export const Content = styled.div`
 `
 
 export const Title = styled.h1`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 6px;
