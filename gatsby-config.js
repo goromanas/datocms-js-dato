@@ -37,38 +37,6 @@ module.exports = {
     },
     `gatsby-plugin-transition-link`,
     {
-      resolve: `gatsby-plugin-sitemap`,
-      options: {
-        // output: `/some-other-sitemap.xml`,
-        // Exclude specific pages or groups of pages using glob parameters
-        // See: https://github.com/isaacs/minimatch
-        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
-        // exclude: [`/category/*`, `/path/to/page`],
-        query: `
-        {
-          datoCmsSite {
-            globalSeo {
-              siteName
-            }
-          }
-          allDatoCmsPage {
-            edges {
-              node {
-                slug
-              }
-            }
-          }
-        }`,
-        serialize: ({ datoCmsSite, allDatoCmsPage }) =>
-          allDatoCmsPage.edges.map((item) => {
-            return {
-              url: `${datoCmsSite.globalSeo.siteName}/${item.node.slug}`,
-              priority: 0.7,
-            }
-          }),
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
