@@ -39,7 +39,7 @@ const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
               <ContactItem>
                 <EnvelopeIcon />
                 <SocialLink>
-                  <Email href={`mailto:${contact.emails}`}>{contact.email}</Email>
+                  <Email href={`mailto:${contact.email}`}>{contact.email}</Email>
                 </SocialLink>
               </ContactItem>
             </SocialWrapper>
