@@ -5,8 +5,6 @@ import { message, Form as AntForm, Row, Col } from 'antd'
 import { TextArea, ButtonWrapper, Input, Select, Checkbox, FormContainer } from './Form.style'
 import Button from '../../core/Button/Button'
 
-// const { Option } = Select
-
 const Form = ({ className, services, contact, topic, setTopic }) => {
   let serviceOptions = [...services]
   if (serviceOptions.length < 4) serviceOptions.push({ title: 'Kita', id: 'Kita' })
@@ -136,13 +134,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
               id="subject"
               type="subject"
               options={serviceOptions}
-            >
-              {/* {serviceOptions.map((service) => (
-                <Option value={service.title} key={service.id}>
-                  {service.title}
-                </Option>
-              ))} */}
-            </Select>
+            ></Select>
           </AntForm.Item>
         </Col>
       </Row>

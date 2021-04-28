@@ -12,11 +12,12 @@ import {
   SocialLink,
   Email,
 } from './Contact.style'
-import Form from './Form/Form'
+
 import EnvelopeIcon from './Icons/EnvelopeIcon'
 import PhoneIcon from './Icons/PhoneIcon'
 import BackToTop from '../core/BackToTop/BackToTop'
 import { Parallax } from 'react-scroll-parallax'
+const Form = React.lazy(() => import('./Form/Form'))
 
 const Contact = ({ id, topic, setTopic, hideBackToTop = false }) => {
   const { contact } = useContact()

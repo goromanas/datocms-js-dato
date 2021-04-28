@@ -25,8 +25,11 @@ export const useHomepage = () => {
             title
             description
             image {
-              fixed(width: 300) {
+              fixed(width: 200) {
                 ...GatsbyDatoCmsFixed
+              }
+              fluid(maxWidth: 300) {
+                ...GatsbyDatoCmsFluid
               }
             }
           }

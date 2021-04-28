@@ -10,6 +10,8 @@ import 'antd/dist/antd.css'
 import { useHideInformation } from '../graphql/useHideInformation'
 import Coaching from '../components/Coaching/Coaching'
 import { useHomepage } from '../graphql/useHomepage'
+import { Suspense } from 'react'
+import Loading from '../components/Loading/Loading'
 
 export default function Index() {
   const [topic, setTopic] = useState('')
@@ -21,17 +23,19 @@ export default function Index() {
     <Layout title="Pagrindinis" home seo={homepage.seo}>
       <Hero hero={homepage.hero[0]} />
       <Coaching id="koucingas" coaching={homepage.coaching[0]} />
-      <About id="apie-mane" about={homepage.about[0]} />
-      <Services
-        id="paslaugos"
-        setTopic={setTopic}
-        title={homepage.servicesTitle}
-        background={homepage.servicesBackground}
-        services={homepage.services}
-      />
-      {!hideTestimonials && <Testimonials id="atsiliepimai" />}
-      <Separator />
-      <Contact id="kontaktai" topic={topic} setTopic={setTopic} />
+      <Suspense fallback={<Loading />}>
+        <About id="apie-mane" about={homepage.about[0]} />
+        <Services
+          id="paslaugos"
+          setTopic={setTopic}
+          title={homepage.servicesTitle}
+          background={homepage.servicesBackground}
+          services={homepage.services}
+        />
+        {!hideTestimonials && <Testimonials id="atsiliepimai" />}
+        <Separator />
+        <Contact id="kontaktai" topic={topic} setTopic={setTopic} />
+      </Suspense>
     </Layout>
   )
 }

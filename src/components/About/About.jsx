@@ -1,4 +1,5 @@
 import React from 'react'
+import { isMobileDevice } from '../../libs'
 import {
   AboutWrapper,
   Title,
@@ -18,12 +19,22 @@ const About = ({ id, about }) => {
           <Title>{about.title}</Title>
         </TitleWrapper>
         <ContentWrapper>
-          <Image
-            fixed={about.image.fixed}
-            imgStyle={{
-              objectFit: 'contain',
-            }}
-          />
+          {isMobileDevice() ? (
+            <Image
+              fixed={about.image.fixed}
+              imgStyle={{
+                objectFit: 'contain',
+              }}
+            />
+          ) : (
+            <Image
+              fluid={about.image.fluid}
+              imgStyle={{
+                objectFit: 'contain',
+              }}
+            />
+          )}
+
           <Content>
             <Description dangerouslySetInnerHTML={{ __html: about.description }} />
           </Content>
