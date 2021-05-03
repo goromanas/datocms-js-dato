@@ -1,14 +1,19 @@
 import React from 'react'
 import Container from '../../../layouts/Container/Container'
 import ServiceCard from '../ServiceCard/ServiceCard'
-import { CardWrapperHorizontal, ServiceSection, BackgroundImage, Title } from '../Services.style'
+import {
+  CardWrapperHorizontal,
+  ServiceSection,
+  BackgroundImagePage,
+  Title,
+} from '../Services.style'
 
 const ServicePageElement = ({ id, services }) => {
   return (
     <ServiceSection id={id} horizontal>
-      <BackgroundImage fluid={services.backgroundimage.fluid} horizontal>
+      <BackgroundImagePage fluid={services.backgroundimage.fluid} horizontal>
         <Title>{services.title}</Title>
-      </BackgroundImage>
+      </BackgroundImagePage>
 
       <Container>
         <CardWrapperHorizontal>

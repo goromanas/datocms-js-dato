@@ -38,14 +38,10 @@ export const BackgroundImage = styled(BackgroundImageLib)`
   position: absolute;
   left: 0;
   right: 0;
-  height: 400px;
+  height: 671px;
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: ${({ horizontal }) => (horizontal ? 'fixed' : 'scroll')};
-
-  ${media.lg`
-    height: 671px;
-  `}
 `
 
 export const Title = styled.h2`
@@ -57,4 +53,19 @@ export const Title = styled.h2`
   font-size: 2.5rem;
   letter-spacing: 6px;
   font-weight: 400;
+`
+
+export const BackgroundImagePage = styled(BackgroundImageLib)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 400px;
+  background-position: 50% 0%;
+
+  ${media.lg`
+    height: 671px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+  `}
 `

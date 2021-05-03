@@ -127,5 +127,12 @@ export const LeftColumn = styled.div`
 export const DescriptionWrapper = styled.div`
   font-size: 1.05rem;
   text-align: left;
+
+  mark {
+    padding: 0;
+    color: #33333395;
+    background: transparent;
+    font-size: 0.875rem;
+  }
 `
 export const RightColumn = styled.div``

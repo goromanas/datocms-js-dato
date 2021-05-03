@@ -8,11 +8,8 @@ export const AboutWrapper = styled.section`
   min-height: 70vh;
   padding-bottom: 4rem;
 
-  /* background: ${({ theme }) => theme.colors.primary}; */
-
   ${media.md`
     min-height: 70vh;
-    text-align: justify;
   `}
 `
 

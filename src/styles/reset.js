@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: bilo, sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-display: swap;
+    font-display: fallback;
   }
 
   h1, h2, h3, h4, h5, h6 {
