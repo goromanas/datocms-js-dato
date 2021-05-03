@@ -44,7 +44,6 @@ export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.primary};
   font-weight: 400;
   letter-spacing: 6px;
-  text-align: center;
   margin-bottom: 1.75rem;
 `
 
