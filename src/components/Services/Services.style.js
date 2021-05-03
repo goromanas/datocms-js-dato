@@ -38,10 +38,14 @@ export const BackgroundImage = styled(BackgroundImageLib)`
   position: absolute;
   left: 0;
   right: 0;
-  height: 671px;
+  height: 400px;
   background-size: cover;
   background-position: 50% 50%;
   background-attachment: ${({ horizontal }) => (horizontal ? 'fixed' : 'scroll')};
+
+  ${media.lg`
+    height: 671px;
+  `}
 `
 
 export const Title = styled.h2`
