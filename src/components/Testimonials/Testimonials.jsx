@@ -41,6 +41,7 @@ const Testimonials = ({ id }) => {
     arrows: false,
     rows: 1,
     speed: 1000,
+    autoplaySpeed: 4000,
     swipeToSlide: true,
     centerMode: true,
   }
