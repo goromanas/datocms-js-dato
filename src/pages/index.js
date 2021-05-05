@@ -6,12 +6,11 @@ import Separator from '../components/core/Separator/Separator'
 import { useHideInformation } from '../graphql/useHideInformation'
 import Coaching from '../components/Coaching/Coaching'
 import { useHomepage } from '../graphql/useHomepage'
-import loadable from '@loadable/component'
-import 'antd/dist/antd.css'
+import Services from '../components/Services/Services'
+import About from '../components/About/About'
+import Testimonials from '../components/Testimonials/Testimonials'
 
-const About = loadable(() => import('../components/About/About'))
-const Services = loadable(() => import('../components/Services/Services'))
-const Testimonials = loadable(() => import('../components/Testimonials/Testimonials'))
+import 'antd/dist/antd.css'
 
 export default function Index() {
   const [topic, setTopic] = useState('')

@@ -38,7 +38,7 @@ const Menu = () => {
         ))}
         {anchorMenuItems.map((item) => (
           <MenuItem key={item.node.id}>
-            <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title}</AnchorLink>
+            <AnchorLink to={generateMenuLink(item.node.link)} stripHash>{item.node.title}</AnchorLink>
           </MenuItem>
         ))}
       </MainWrapper>
@@ -58,7 +58,7 @@ const Menu = () => {
         ))}
         {anchorMenuItems.map((item) => (
           <MobileMenuItem key={`${item.node.id}-mobile`} onClick={() => setMobileMenuOpen(false)}>
-            <AnchorLink to={generateMenuLink(item.node.link)}>{item.node.title} </AnchorLink>
+            <AnchorLink to={generateMenuLink(item.node.link)} stripHash>{item.node.title} </AnchorLink>
           </MobileMenuItem>
         ))}
       </MobileWrapper>
