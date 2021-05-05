@@ -35,7 +35,7 @@ const Form = ({ className, services, contact, topic, setTopic }) => {
     }),
     onSubmit: async (values) => {
       values.subject = topic
-      values.message = `Paslauga: ${topic}` + values.message
+      values.message = `Paslauga: ${topic}. Žinutė: ` + values.message
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
