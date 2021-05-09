@@ -1,0 +1,13 @@
+[[redirects]]
+  from = "http://stukaite.lt"
+  to = "https://stukaite.lt"
+  status = 301
+  force = false
+  query = {path = ":path"}
+
+  [[redirects]]
+  from = "https://js-koucingas..app/*"
+  to = "https://stukaite.lt"
+  status = 301
+  force = true
+  query = {path = ":path"}
