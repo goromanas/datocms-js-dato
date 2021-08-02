@@ -5,6 +5,9 @@ export const useServices = () => {
       query serviceQuery {
         services: datoCmsService {
           title
+          seo: seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
           backgroundimage {
             url
             fluid(maxWidth: 1100) {

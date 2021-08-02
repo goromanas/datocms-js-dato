@@ -5,6 +5,9 @@ export const useCoaching = () => {
       query coachingQuery {
         coaching: datoCmsCoaching {
           title
+          seo: seoMetaTags {
+            ...GatsbyDatoCmsSeoMetaTags
+          }
           content {
             value
             blocks {
